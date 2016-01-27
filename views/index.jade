@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title List of files
+  body
+    h1 Student List using Jade engine
+    div
+      each item in fileNameList
+        div
+          a(href="#diff_#{item}")=item
