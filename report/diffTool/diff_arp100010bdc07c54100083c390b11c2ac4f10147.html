@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>jsdifflib demo</title>
+    <link rel="stylesheet" type="text/css" href="css/diffview.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <script type="text/javascript" src="js/diffview.js"></script>
+    <script type="text/javascript" src="js/difflib.js"></script>
+    <script type="text/javascript" src="js/diffrun.js"></script>
+  </head>
+  <body>
+    <h1 class="top"></h1>
+    <div class="top"><strong>Context size (optional):</strong>
+      <input id="contextSize" type="text" value="">
+    </div>
+    <div class="textInput">
+      <h2>Base Text</h2>
+      <textarea id="baseText"><!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:i18n="http://apache.org/cocoon/i18n/2.1" xmlns:configuration-reader="java:com.wolterskluwer.atlas.mantle.dps.cocoon.extension.ConfigurationReader">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/docDisplay.css?v=7">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/annotation.css?v=13">
+    <script src="../resources/js/format-document-fragment.js?v=2" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        var documentContext = {
+            enableNotesRendering: true,
+            enableHLRendering: true,
+            rfID: "-1",
+            showAnnotationsByDefault: false,
+            annotationDisplayMode: "SIDE_NOTES",
+            annotationAccelerator: false,
+            filterByProductId: true,
+            locale: "en",
+            annoId: "-1",
+            scroll: "false",
+            showSelected: "false"
+        };
+    </script>
+    <script src="../resources/js/logging.js?v=3" type="text/javascript"></script>
+    <script src="../resources/js/jquery.1.7.2.min.js?v=1" type="text/javascript"></script>
+    <script src="../resources/js/rangy-core.js?v=3" type="text/javascript"></script>
+    <script src="../resources/js/core.js?v=20" type="text/javascript"></script>
+    <script src="../resources/js/accelerator.js?v=8" type="text/javascript"></script>
+    <script src="../resources/js/print-fragment.js?v=4" type="text/javascript"></script>
+    <script src="../resources/js/annotation.js?v=41" type="text/javascript"></script>
+    <script src="../resources/js/annotation-widgets.js?v=18" type="text/javascript"></script>
+    <script src="../resources/js/annotation-iface.js?v=11" type="text/javascript"></script>
+    <script src="../resources/js/common.js?v=9" type="text/javascript"></script>
+    <script src="../resources/js/scion.js?v=15" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        wk.i18n.setText("pf_option_label", "Print selected text");
+        wk.i18n.setText("pf_option_title", "Print selected text");
+
+        wk.i18n.setText("color_title_TRANSPARENT", "Transparent");
+        wk.i18n.setText("color_title_YELLOW", "Yellow");
+        wk.i18n.setText("color_title_PINK", "Pink");
+        wk.i18n.setText("color_title_ORANGE", "Orange");
+        wk.i18n.setText("color_title_GREEN", "Green");
+        wk.i18n.setText("color_title_BLUE", "Blue");
+        wk.i18n.setText("add_note_option_label", "Add Note");
+        wk.i18n.setText("add_note_option_title", "Add Note for highlight");
+        wk.i18n.setText("hl_option_label", "Highlight text");
+        wk.i18n.setText("hl_option_title", "Highlight selected text");
+        wk.i18n.setText("note_handle_prompt", "Enter note here...");
+        wk.i18n.setText("note_handle_created", "Created");
+        wk.i18n.setText("note_handle_updated", "Last Modified:");
+        wk.i18n.setText("note_handle_add_note_btn_text", "Add Note");
+        wk.i18n.setText("note_handle_add_note_btn_title", "Adds note to this highlight");
+        wk.i18n.setText("note_handle_edit_btn_text", "Edit");
+        wk.i18n.setText("note_handle_edit_btn_title", "Edit");
+        wk.i18n.setText("note_handle_delete_btn_text", "Delete");
+        wk.i18n.setText("note_handle_delete_btn_title", "Delete");
+        wk.i18n.setText("note_handle_close_btn_text", "X");
+        wk.i18n.setText("note_handle_close_btn_title", "Close");
+        wk.i18n.setText("note_handle_save_btn_text", "Save");
+        wk.i18n.setText("note_handle_save_btn_title", "Save");
+        wk.i18n.setText("note_handle_cancel_btn_text", "Cancel");
+        wk.i18n.setText("note_handle_cancel_btn_title", "Cancel");
+        wk.i18n.setText("note_handle_view_in_host_msg", "View your previously highlighted passage on the Document Notes tab");
+        wk.i18n.setText("note_handle_no_user_name", "No user name");
+        wk.i18n.setText("note_author_disabled_suffix", "(disabled)");
+        wk.i18n.setText("note_author_deleted", "unknown user (deleted)");
+    </script>
+    <script src="../resources/js/cautionNoteTip.js?v=1" type="text/javascript"></script>
+    <script src="../resources/js/tooltip.js" type="text/javascript"></script>
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" onload="doOnDocumentLoaded()">
+    <div class="touchable">
+        <div id="dps-resource" class="dps-resource">
+            <div id="arp100010bdc07c54100083c390b11c2ac4f10147" tocleafnodewkdocid="WKUS_TAL_11713#teid-482" cshleafnodewkdocid="WKUS-TAL-DOCS-PHC-{c1a56e6a-6770-41f0-baa7-744fab3444e1}" class="docInFocus">
+                <table xmlns:cinclude="http://apache.org/cocoon/include/1.0" xmlns:xsp="http://apache.org/xsp" xmlns:xsp-request="http://apache.org/xsp/request/2.0" xmlns:dps="tbd/dps" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
+                    cellpadding="0" cellspacing="0" class="anBase annoRight editorView">
+                    <tr>
+                        <td colspan="3">
+                            <div class="topContainer">
+                                <div class="topContainer-inner"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="anCol1" rowspan="2"></td>
+                        <td></td>
+                        <td class="anCol3" rowspan="2">
+                            <div class="sideContainer">
+                                <div class="sideContainer-inner"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="anCol2">
+                            <div class="docContent">
+                                <div class="content-wrap super-class-explanation">
+                                    <div id="documentContent" origin-xpath="d" wk-doc-id="arp100010bdc07c54100083c390b11c2ac4f10147">
+                                        <div style="padding-bottom:5px;">
+                                            <a href="javascript:void(0)" id="RFIndicator_arp100010bdc07c54100083c390b11c2ac4f10147" onclick="openResearchFolder('arp100010bdc07c54100083c390b11c2ac4f10147')" alt="Open Research Folder" title="Open Research Folder"
+                                                class=""></a>
+                                        </div>
+                                        <h1 class="docDisplay" id="docTitle" origin-xpath="dh">Code Explanations<span class="docHeadSpacer">,</span>Related Entities</h1>
+                                        <p xmlns:dps="tbd/dps">
+                                            <p>
+                                                <div origin-xpath="dri" origin-id="ri1" id="ri1" class="relBtnContainer">
+                                                    <div class="relBtn firstRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_internal_revenue_code_button" title="IRC" onclick="callRelatedLink(this,'arp100010bdc07c54100083c390b11c2ac4f10147','internal_revenue_code_button','IRC')"><a id="relationships1_internal_revenue_code_button_link" href="javascript:void(0)" class="relBtnLink atomHL">IRC</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_explanations_button" title="CCH Explanations" onclick="callRelatedLink(this,'arp100010bdc07c54100083c390b11c2ac4f10147','explanations_button','CCH Explanations')"><a id="relationships1_explanations_button_link" href="javascript:void(0)" class="relBtnLink atomHL">CCH Explanations</a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </p>
+                                        </p>
+                                        <a name="0010bdc07c541000b01790b11c2ac4f10148" id="0010bdc07c541000b01790b11c2ac4f10148"></a>
+                                        <p class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyp" style="margin-bottom:10pt;">A lease may be characterized as a lease of tax-exempt use property if a party that is related to a tax-exempt organization is involved. Related parties can include governmental entities or nongovernmental entities.</p>
+                                        <a
+                                            name="0010bdc07c5410009cfe90b11c2ac4f10149" id="0010bdc07c5410009cfe90b11c2ac4f10149"></a>
+                                            <h2 origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c5410009cfe90b11c2ac4f10149h" class="hP docDisplay level-heading" style="">Governmental Units</h2>
+                                            <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c5410009cfe90b11c2ac4f10149p" class="hP">Each governmental unit and each agency or instrumentality of a governmental unit is related to each other if the units, agencies, or instrumentalities directly or indirectly derive their powers, rights, and
+                                                duties (in whole or in part) from the <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §168(h)(4)(A)(i)</span><a id="link9" class="link" href="javascript:void(0)" onclick="callCitationLink('link9','IRC-FILE','S168(h)(4)(A)(i)','','','')">same sovereign authority</a></span>.
+                                                The United States, each state, and each possession of the United States is treated as a <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §168(h)(4)(A)(ii)</span><a id="link10" class="link"
+                                                    href="javascript:void(0)" onclick="callCitationLink('link10','IRC-FILE','S168(h)(4)(A)(ii)','','','')"> separate sovereign authority</a></span>. </p>
+                                            <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c5410009cfe90b11c2ac4f10149p2"
+                                                class="hP">For example, a city located in one state is not related to a city located in another state because each state is deemed to have separate sovereign authority. Conversely, each city within a single state is related
+                                                to all other cities in that state. If ten cities in one state each own a 10-percent interest in a corporation, the state, each city, and the corporation are all considered <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §168(h)(4)(A)(i)</span>
+                                                <a
+                                                    id="link12" class="link" href="javascript:void(0)" onclick="callCitationLink('link12','IRC-FILE','S168(h)(4)(A)(i)','','','')">related parties</a>
+                                                    </span>.</p>
+                                            <a name="0010bdc07c54100083a990b11c2ac4f1014a" id="0010bdc07c54100083a990b11c2ac4f1014a"></a>
+                                            <h2 origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100083a990b11c2ac4f1014ah" class="hP docDisplay level-heading" style="">Nongovernmental Units</h2>
+                                            <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100083a990b11c2ac4f1014ap" class="hP">For entities that are not governmental units, related party status is determined with reference to the organizations' purposes and control. When two entities have significant common purposes and substantial
+                                                common membership, or if they are subject to direct or indirect substantial common direction or control, they are deemed to be <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §168(h)(4)(B)</span>
+                                                <a
+                                                    id="link16" class="link" href="javascript:void(0)" onclick="callCitationLink('link16','IRC-FILE','S168(h)(4)(B)','','','')">related entities</a>
+                                                    </span>.</p>
+                                            <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100083a990b11c2ac4f1014ap2" class="hP">In addition, a tax-exempt entity is related to any other entity if either entity owns, directly or indirectly, a <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §168(h)(4)(C)(i)</span><a id="link18"
+                                                    class="link" href="javascript:void(0)" onclick="callCitationLink('link18','IRC-FILE','S168(h)(4)(C)(i)','','','')">50-percent or greater interest</a></span> in the capital or profits of the other.</p>
+                                            <p
+                                                origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100083a990b11c2ac4f1014ap3" class="hP">Finally, an organization or entity is considered to be related to another with respect to a transaction if that transaction is part of an attempt by the entities to avoid the application of the tax-exempt entity
+                                                leasing rules <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §168(h)(4)(D)</span><a id="link20" class="link" href="javascript:void(0)" onclick="callCitationLink('link20','IRC-FILE','S168(h)(4)(D)','','','')">avoid the application of the tax-exempt entity leasing rules</a></span>.</p>
+                                                <a
+                                                    name="0010bdc07c541000b60190b11c2ac4f1014b" id="0010bdc07c541000b60190b11c2ac4f1014b"></a>
+                                                    <h2 origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c541000b60190b11c2ac4f1014bh" class="hP docDisplay level-heading" style="">Like-Kind Exchanges of Tax-Exempt Use Property by Related
+Entities</h2>
+                                                    <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c541000b60190b11c2ac4f1014bp" class="hP">A taxpayer that receives depreciable property for tax-exempt use property in a like-kind exchange involving a related party must depreciate the property received as though it was the exchanged tax-exempt
+                                                        use property if a principal purpose of the transaction is to avoid application of the <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.168(h)-1</span><a id="link24" class="link"
+                                                            href="javascript:void(0)" onclick="callCitationLink('link24','FEDREG','S1.168(h)-1','','','')">MACRS alternative depreciation system</a></span> (ADS).</p>
+                                                    <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c541000b60190b11c2ac4f1014bp2"
+                                                        class="hP">The depreciable property (tainted property) is treated in the same manner as the exchanged property (related tax-exempt use property) for purposes of determining the allowable depreciation deduction.
+                                                        Thus, the <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.168(h)-1(b)</span><a id="link26" class="link" href="javascript:void(0)" onclick="callCitationLink('link26','FEDREG','S1.168(h)-1(b)','','','')">tainted property is depreciated</a></span>
+                                                        by the taxpayer over the remaining recovery period of, and using the same depreciation method and convention as, the related tax-exempt use property</p>
+                                                    <div origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c541000b60190b11c2ac4f1014bn"
+                                                        class="hP noteContainer">
+                                                        <div class="example">Example&nbsp;</div>
+                                                        <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c541000b60190b11c2ac4f1014bnp" class="hP noteBody">Black Corporation owns all of the stock of two subsidiaries, B corporation and S corporation. Black Corporation and its two subsidiaries do not file a consolidated federal income tax return. On May
+                                                            5, 2010, B corporation purchases aircraft I for $1 million and leases it to a foreign airline whose income is not subject to U.S. taxation and which is a tax-exempt entity. On the same date,
+                                                            S corporation owns an aircraft (aircraft II) with a fair market value of $1 million, which is leased to an airline that is a U.S. taxpayer. S corporation's adjusted basis in aircraft II is $0.
+                                                            The next day, at a time when each aircraft is still worth $1 million B corporation transfers aircraft I to S corporation (subject to the lease to the foreign airline) in exchange for aircraft
+                                                            II (subject to the lease to the airline that is a U.S. taxpayer). S corporation realizes gain of $1 million on the exchange, but that gain is not recognized because the exchange is of like-kind
+                                                            properties. Following the exchange, S corporation has a $0 basis in aircraft I pursuant to the like-kind exchange rules. B corporation has a $1 million basis in aircraft II. If a principal purpose
+                                                            of the transfer is to avoid the application of the alternative depreciation system, B must recover its $1 million basis in aircraft II over the remaining recovery period of, and using the same
+                                                            depreciation method and convention as that of aircraft I, <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.168(h)-1(d)</span><a id="link29" class="link" href="javascript:void(0)"
+                                                                onclick="callCitationLink('link29','FEDREG','S1.168(h)-1(d)','','','')">the related tax-exempt use property</a></span>.</p>
+                                                    </div>
+                                                    <a name="0010bdc07c54100098d990b11c2ac4f1014d" id="0010bdc07c54100098d990b11c2ac4f1014d"></a>
+                                                    <h2 origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dh" class="hP docDisplay level-heading" style="">Tainted Property Rule</h2>
+                                                    <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dp" class="hP">The <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.168(h)-1(b)(2)</span><a id="link33" class="link" href="javascript:void(0)" onclick="callCitationLink('link33','FEDREG','S1.168(h)-1(b)(2)','','','')">tainted property rule</a></span>
+                                                        generally applies only to the portion of the taxpayer's basis in the tainted property that does not exceed the taxpayer's adjusted basis in the related tax-exempt use property prior to the transfer.</p>
+                                                    <p
+                                                        origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dp2" class="hP">In addition, the rule does not apply to the portion of the basis in tainted property received in a nontaxable transaction, including:</p>
+                                                        <ul origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014du"
+                                                            class="bull">
+                                                            <li class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui">
+                                                                <p class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014duip">distributions in complete liquidation in a controlled subsidiary;</p>
+                                                            </li>
+                                                            <li class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui2">
+                                                                <p class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui2p">transfers to corporations controlled by the transferor;</p>
+                                                            </li>
+                                                            <li class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui3">
+                                                                <p class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui3p">exchanges under tax-free reorganizations;</p>
+                                                            </li>
+                                                            <li class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui4">
+                                                                <p class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui4p">transfers in exchange for an interest in a partnership; and</p>
+                                                            </li>
+                                                            <li class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui5">
+                                                                <p class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui5p">distributions to a partner and transactions between members of the same affiliated group when the group files a consolidated return. </p>
+                                                            </li>
+                                                        </ul>
+                                                        <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dp3" class="hP">In these cases, the property is already bound to be depreciated under the methods used by the transferor in the nontaxable transaction. </p>
+                                                        <div origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dn"
+                                                            class="hP noteContainer">
+                                                            <div class="example">Example&nbsp;</div>
+                                                            <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dnp" class="hP noteBody">First Corporation owns all of the stock of two subsidiaries, B corporation and Z corporation. B corporation and Z corporation are members of an affiliated group that files a consolidated federal
+                                                                income tax return. B corporation and Z corporation each own identical aircraft. B corporation's aircraft (FA) is leased to a tax-exempt entity and has a fair market value of $1 million and
+                                                                an adjusted basis of $500,000. Z corporation's aircraft (DA) is leased to a U.S. taxpayer and has a fair market value of $1 million and an adjusted basis of $10,000. On May 1, 2002, the two
+                                                                subsidiaries exchange aircraft, subject to their respective leases. If a principal purpose of the transfer is to avoid the application of the alternative depreciation system, B corporation
+                                                                must depreciate $490,000 of the basis of DA over the remaining recovery period of FA, using the same depreciation method and convention. However, the remaining $10,000 must be depreciated
+                                                                using the transferor's recovery period and depreciation method for DA, under the rules for nontaxable transactions between affiliated groups that file a consolidated return.</p>
+                                                        </div>
+                                                        <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dp4" class="hP"><span><a target="_blank" href="atlas-doc-attach/attachment.pdf?src=file:///apps/WEBS/docs/attach/WKUS-TAL-DOCS-PHC/AppendixB-TableofClassLivesandRecoveryPersions-p946.pdf&amp;documentTitle=AppendixB-TableofClassLivesandRecoveryPersions-p946.pdf&amp;AtlasTicket=404180D6-714C-438F-B140-817582E592BC" onclick="logExternalLink('AppendixB-TableofClassLivesandRecoveryPersions-p946.pdf','/docmedia/attach/WKUS-TAL-DOCS-PHC/AppendixB-TableofClassLivesandRecoveryPersions-p946.pdf')" alt="Class Lives and Recovery Period" title="Class Lives and Recovery Period">Class Lives and Recovery Period</a></span></p>
+                                    </div>
+                                    <div>
+                                        <div style="padding-top:10px;"><a id="document_backToTop" href="javascript:void(0)" onclick="window.scrollTo(0,0);">Back to Top</a></div>
+                                        <div style="width:100%;"><span style="float:right; padding-right:25px;"><a id="showLink" href="javascript:toggleMetadata();" class="metadataLink"><span id="show" class="ui">Show Metadata</span><span id="hide" class="ui" style="display:none">Hide Metadata</span></a>
+                                            </span>
+                                        </div>
+                                        <div id="metadata" style="display:none;">
+                                            <h1 class="metadata">METADATA</h1>
+                                            <table class="metadata">
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_title">title</td>
+                                                    <td class="metadatavalue" id="metadata_title_value">Related Entities</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_search-title">search-title</td>
+                                                    <td class="metadatavalue" id="metadata_search-title_value"><b>Explanation</b>: Code Explanations, Related Entities</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_primary-class">primary-class</td>
+                                                    <td class="metadatavalue" id="metadata_primary-class_value">explanation/explanation</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_industry">Industry</td>
+                                                    <td class="metadatavalue" id="metadata_industry_value"></td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_wk-da_number">wk-da number</td>
+                                                    <td class="metadatavalue" id="metadata_wk-da_number_value">WKUS_TAL_11713</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_CCH_PubVol">CCH PubVol</td>
+                                                    <td class="metadatavalue" id="metadata_CCH_PubVol_value">arp10</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_wk-doc-id">wk-doc-id</td>
+                                                    <td class="metadatavalue" id="metadata_wk-doc-id_value">arp100010bdc07c54100083c390b11c2ac4f10147</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_language">language</td>
+                                                    <td class="metadatavalue" id="metadata_language_value">http://psi.oasis-open.org/iso/639/#eng</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_region">region</td>
+                                                    <td class="metadatavalue" id="metadata_region_value"><span>United States [http://wk-us.com/meta/regions/#US]</span></td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_publisher">publisher</td>
+                                                    <td class="metadatavalue" id="metadata_publisher_value">http://wk-us.com/meta/publishers/#CCH</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_normalized_link">Normalized Link Values</td>
+                                                    <td class="metadatavalue" id="metadata_normalized_link_value">P168(h)-child1</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_publishing-status">publishing-status</td>
+                                                    <td class="metadatavalue" id="metadata_publishing-status_value">new</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_publishing-dates">publishing-dates</td>
+                                                    <td class="metadatavalue" id="metadata_publishing-dates_value">available-date: <br>modified-date: <br>revised-date: <br></td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_document-transformation-history">document-transformation-history</td>
+                                                    <td class="metadatavalue" id="metadata_document-transformation-history_value">SOURCE-CRC: 3782737480<br>G2I-VERSION: Group2Interchange-RELEASE-05-07-0009<br>G2I-TRANSFORMATION-DATE: 2016-01-20<br>I2A-VERSION: JI2A-R7-00-01-08-0006<br>I2A-TRANSFORMATION-DATE: 2016-01-21<br></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <p>
+                                            <script language="javascript" type="text/javascript">
+                                                if (setCloseButtonInNewWindow && setCloseButtonInNewWindow()) {
+                                                    document.write('<a id="closeWindow" href="javascript:void(0)" onClick="top.close()">Close window</a>');
+                                                }
+                                            </script>
+                                        </p>
+                                    </div>
+                                    <div class="footer" id="docCopyrightInfo">
+                                        <script language="javascript" type="text/javascript">
+                                            setCopyrightInfo();
+                                        </script>
+                                    </div>
+                                    <div id="printDocumentFragmentBtn" style="display: none; position: absolute;" onClick="printDocumentFragment()"><img src="../resources/images/printDocumentFragmentIcon.gif" alt="Print selected text"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="accmenu" style="display: none;">
+            <div class="option addnote" style="display: none">
+                <div class="labelwrapper"><span class="label"></span></div>
+                <div class="replaceByColorPicker"></div>
+            </div>
+            <div class="option addhl" style="display: none">
+                <div class="labelwrapper"><span class="label"></span></div>
+                <div class="replaceByColorPicker"></div>
+            </div>
+            <div class="option printfragment">
+                <div class="img"></div>
+                <div class="labelwrapper"><span class="label"></span></div>
+            </div>
+        </div>
+        <div id="colorPickerTemplate" class="pe_colorpicker">
+            <div class="left">
+                <div class="right">
+                    <div class="middle"><a class="pe_colorboxwrapper selected"><span></span></a>
+                        <a class="pe_opener opened"></a><span class="pe_coloroptions"><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="metricsTemplate" class="metrics" style="display: none"><span class="dateCreated"></span><br><span class="author"></span>
+            <p class="modified"><span class="lastModified"></span><span class="dateModified"></span></p>
+        </div>
+        <div id="sideBoxTemplate" class="sideBox" style="display: none">
+            <div class="readMode">
+                <div class="replaceByColorPicker"></div>
+                <a class="deleteBtn"></a>
+                <a class="editBtn"></a>
+                <div class="replaceByMetrics"></div>
+                <div class="warningText" style="display: none"><span class="text"></span></div>
+                <div class="noteText"></div>
+            </div>
+            <div class="editMode">
+                <div class="editBox">
+                    <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+                <div class="footerStrip">
+                    <a class="cancelBtn"></a>
+                    <a class="saveBtn"></a>
+                </div>
+            </div>
+        </div>
+        <div id="topBoxTemplate" class="topBox" style="display: none">
+            <div class="readMode">
+                <a class="deleteBtn"></a>
+                <a class="editBtn"></a>
+                <div class="replaceByMetrics"></div>
+                <div class="warningText" style="display: none"><span class="text"></span>
+                    <a class="action"></a>
+                </div>
+                <div class="noteText"></div>
+            </div>
+            <div class="editMode">
+                <div class="editBox">
+                    <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+                <div class="footerStrip">
+                    <a class="cancelBtn"></a>
+                    <a class="saveBtn"></a>
+                </div>
+            </div>
+        </div>
+        <div id="overlayTemplate" class="overlay" style="display: none">
+            <div class="overlay-inner">
+                <div class="editMode">
+                    <div class="editBox">
+                        <a class="closeBtn"></a>
+                        <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+                    <div class="footerStrip">
+                        <a class="cancelBtn"></a>
+                        <a class="saveBtn"></a>
+                        <a class="deleteBtn"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html></textarea>
+    </div>
+    <div class="textInput spacer">
+      <h2>New Text</h2>
+      <textarea id="newText"><!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:i18n="http://apache.org/cocoon/i18n/2.1" xmlns:configuration-reader="java:com.wolterskluwer.atlas.mantle.dps.cocoon.extension.ConfigurationReader">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/docDisplay.css?v=7">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/annotation.css?v=13">
+    <script src="../resources/js/format-document-fragment.js?v=2" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        var documentContext = {
+            enableNotesRendering: true,
+            enableHLRendering: true,
+            rfID: "-1",
+            showAnnotationsByDefault: false,
+            annotationDisplayMode: "SIDE_NOTES",
+            annotationAccelerator: false,
+            filterByProductId: true,
+            locale: "en",
+            annoId: "-1",
+            scroll: "false",
+            showSelected: "false"
+        };
+    </script>
+    <script src="../resources/js/logging.js?v=3" type="text/javascript"></script>
+    <script src="../resources/js/jquery.1.7.2.min.js?v=1" type="text/javascript"></script>
+    <script src="../resources/js/rangy-core.js?v=3" type="text/javascript"></script>
+    <script src="../resources/js/core.js?v=20" type="text/javascript"></script>
+    <script src="../resources/js/accelerator.js?v=8" type="text/javascript"></script>
+    <script src="../resources/js/print-fragment.js?v=4" type="text/javascript"></script>
+    <script src="../resources/js/annotation.js?v=41" type="text/javascript"></script>
+    <script src="../resources/js/annotation-widgets.js?v=18" type="text/javascript"></script>
+    <script src="../resources/js/annotation-iface.js?v=11" type="text/javascript"></script>
+    <script src="../resources/js/common.js?v=9" type="text/javascript"></script>
+    <script src="../resources/js/scion.js?v=15" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        wk.i18n.setText("pf_option_label", "Print selected text");
+        wk.i18n.setText("pf_option_title", "Print selected text");
+
+        wk.i18n.setText("color_title_TRANSPARENT", "Transparent");
+        wk.i18n.setText("color_title_YELLOW", "Yellow");
+        wk.i18n.setText("color_title_PINK", "Pink");
+        wk.i18n.setText("color_title_ORANGE", "Orange");
+        wk.i18n.setText("color_title_GREEN", "Green");
+        wk.i18n.setText("color_title_BLUE", "Blue");
+        wk.i18n.setText("add_note_option_label", "Add Note");
+        wk.i18n.setText("add_note_option_title", "Add Note for highlight");
+        wk.i18n.setText("hl_option_label", "Highlight text");
+        wk.i18n.setText("hl_option_title", "Highlight selected text");
+        wk.i18n.setText("note_handle_prompt", "Enter note here...");
+        wk.i18n.setText("note_handle_created", "Created");
+        wk.i18n.setText("note_handle_updated", "Last Modified:");
+        wk.i18n.setText("note_handle_add_note_btn_text", "Add Note");
+        wk.i18n.setText("note_handle_add_note_btn_title", "Adds note to this highlight");
+        wk.i18n.setText("note_handle_edit_btn_text", "Edit");
+        wk.i18n.setText("note_handle_edit_btn_title", "Edit");
+        wk.i18n.setText("note_handle_delete_btn_text", "Delete");
+        wk.i18n.setText("note_handle_delete_btn_title", "Delete");
+        wk.i18n.setText("note_handle_close_btn_text", "X");
+        wk.i18n.setText("note_handle_close_btn_title", "Close");
+        wk.i18n.setText("note_handle_save_btn_text", "Save");
+        wk.i18n.setText("note_handle_save_btn_title", "Save");
+        wk.i18n.setText("note_handle_cancel_btn_text", "Cancel");
+        wk.i18n.setText("note_handle_cancel_btn_title", "Cancel");
+        wk.i18n.setText("note_handle_view_in_host_msg", "View your previously highlighted passage on the Document Notes tab");
+        wk.i18n.setText("note_handle_no_user_name", "No user name");
+        wk.i18n.setText("note_author_disabled_suffix", "(disabled TEST)");
+        wk.i18n.setText("note_author_deleted", "unknown user (deleted)");
+    </script>
+    <script src="../resources/js/cautionNoteTip.js?v=1" type="text/javascript"></script>
+    <script src="../resources/js/tooltip.js" type="text/javascript"></script>
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" onload="doOnDocumentLoaded()">
+    <div class="touchable">
+        <div id="dps-resource" class="dps-resource">
+            <div id="arp100010bdc07c54100083c390b11c2ac4f10147" tocleafnodewkdocid="WKUS_TAL_11713#teid-482" cshleafnodewkdocid="WKUS-TAL-DOCS-PHC-{c1a56e6a-6770-41f0-baa7-744fab3444e1}" class="docInFocus">
+                <table xmlns:cinclude="http://apache.org/cocoon/include/1.0" xmlns:xsp="http://apache.org/xsp" xmlns:xsp-request="http://apache.org/xsp/request/2.0" xmlns:dps="tbd/dps" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
+                    cellpadding="0" cellspacing="0" class="anBase annoRight editorView">
+                    <tr>
+                        <td colspan="3">
+                            <div class="topContainer">
+                                <div class="topContainer-inner"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="anCol1" rowspan="2"></td>
+                        <td></td>
+                        <td class="anCol3" rowspan="2">
+                            <div class="sideContainer">
+                                <div class="sideContainer-inner"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="anCol2">
+                            <div class="docContent">
+                                <div class="content-wrap super-class-explanation">
+                                    <div id="documentContent" origin-xpath="d" wk-doc-id="arp100010bdc07c54100083c390b11c2ac4f10147">
+                                        <div style="padding-bottom:5px;">
+                                            <a href="javascript:void(0)" id="RFIndicator_arp100010bdc07c54100083c390b11c2ac4f10147" onclick="openResearchFolder('arp100010bdc07c54100083c390b11c2ac4f10147')" alt="Open Research Folder" title="Open Research Folder"
+                                                class=""></a>
+                                        </div>
+                                        <h1 class="docDisplay" id="docTitle" origin-xpath="dh">Code Explanations<span class="docHeadSpacer">,</span>Related Entities</h1>
+                                        <p xmlns:dps="tbd/dps">
+                                            <p>
+                                                <div origin-xpath="dri" origin-id="ri1" id="ri1" class="relBtnContainer">
+                                                    <div class="relBtn firstRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_internal_revenue_code_button" title="IRC" onclick="callRelatedLink(this,'arp100010bdc07c54100083c390b11c2ac4f10147','internal_revenue_code_button','IRC')"><a id="relationships1_internal_revenue_code_button_link" href="javascript:void(0)" class="relBtnLink atomHL">IRC</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_explanations_button" title="CCH Explanations" onclick="callRelatedLink(this,'arp100010bdc07c54100083c390b11c2ac4f10147','explanations_button','CCH Explanations')"><a id="relationships1_explanations_button_link" href="javascript:void(0)" class="relBtnLink atomHL">CCH Explanations</a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </p>
+                                        </p>
+                                        <a name="0010bdc07c541000b01790b11c2ac4f10148" id="0010bdc07c541000b01790b11c2ac4f10148"></a>
+                                        <p class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyp" style="margin-bottom:10pt;">A lease may be characterized as a lease of tax-exempt use property if a party that is related to a tax-exempt organization is involved. Related parties can include governmental entities or nongovernmental entities.</p>
+                                        <a
+                                            name="0010bdc07c5410009cfe90b11c2ac4f10149" id="0010bdc07c5410009cfe90b11c2ac4f10149"></a>
+                                            <h2 origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c5410009cfe90b11c2ac4f10149h" class="hP docDisplay level-heading" style="">Governmental Units</h2>
+                                            <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c5410009cfe90b11c2ac4f10149p" class="hP">Each governmental unit and each agency or instrumentality of a governmental unit is related to each other if the units, agencies, or instrumentalities directly or indirectly derive their powers, rights, and
+                                                duties (in whole or in part) from the <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §168(h)(4)(A)(i)</span><a id="link9" class="link" href="javascript:void(0)" onclick="callCitationLink('link9','IRC-FILE','S168(h)(4)(A)(i)','','','')">same sovereign authority</a></span>.
+                                                The United States, each state, and each possession of the United States is treated as a <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §168(h)(4)(A)(ii)</span><a id="link10" class="link"
+                                                    href="javascript:void(0)" onclick="callCitationLink('link10','IRC-FILE','S168(h)(4)(A)(ii)','','','')"> separate sovereign authority</a></span>. </p>
+                                            <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c5410009cfe90b11c2ac4f10149p2"
+                                                class="hP">For example, a city located in one state is not related to a city located in another state because each state is deemed to have separate sovereign authority. Conversely, each city within a single state is related
+                                                to all other cities in that state. If ten cities in one state each own a 10-percent interest in a corporation, the state, each city, and the corporation are all considered <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §168(h)(4)(A)(i)</span>
+                                                <a
+                                                    id="link12" class="link" href="javascript:void(0)" onclick="callCitationLink('link12','IRC-FILE','S168(h)(4)(A)(i)','','','')">related parties</a>
+                                                    </span>.</p>
+                                            <a name="0010bdc07c54100083a990b11c2ac4f1014a" id="0010bdc07c54100083a990b11c2ac4f1014a"></a>
+                                            <h2 origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100083a990b11c2ac4f1014ah" class="hP docDisplay level-heading" style="">Nongovernmental Units</h2>
+                                            <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100083a990b11c2ac4f1014ap" class="hP">For entities that are not governmental units, related party status is determined with reference to the organizations' purposes and control. When two entities have significant common purposes and substantial
+                                                common membership, or if they are subject to direct or indirect substantial common direction or control, they are deemed to be <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §168(h)(4)(B)</span>
+                                                <a
+                                                    id="link16" class="link" href="javascript:void(0)" onclick="callCitationLink('link16','IRC-FILE','S168(h)(4)(B)','','','')">related entities</a>
+                                                    </span>.</p>
+                                            <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100083a990b11c2ac4f1014ap2" class="hP">In addition, a tax-exempt entity is related to any other entity if either entity owns, directly or indirectly, a <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §168(h)(4)(C)(i)</span><a id="link18"
+                                                    class="link" href="javascript:void(0)" onclick="callCitationLink('link18','IRC-FILE','S168(h)(4)(C)(i)','','','')">50-percent or greater interest</a></span> in the capital or profits of the other.</p>
+                                            <p
+                                                origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100083a990b11c2ac4f1014ap3" class="hP">Finally, an organization or entity is considered to be related to another with respect to a transaction if that transaction is part of an attempt by the entities to avoid the application of the tax-exempt entity
+                                                leasing rules <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §168(h)(4)(D)</span><a id="link20" class="link" href="javascript:void(0)" onclick="callCitationLink('link20','IRC-FILE','S168(h)(4)(D)','','','')">avoid the application of the tax-exempt entity leasing rules</a></span>.</p>
+                                                <a
+                                                    name="0010bdc07c541000b60190b11c2ac4f1014b" id="0010bdc07c541000b60190b11c2ac4f1014b"></a>
+                                                    <h2 origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c541000b60190b11c2ac4f1014bh" class="hP docDisplay level-heading" style="">Like-Kind Exchanges of Tax-Exempt Use Property by Related
+Entities</h2>
+                                                    <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c541000b60190b11c2ac4f1014bp" class="hP">A taxpayer that receives depreciable property for tax-exempt use property in a like-kind exchange involving a related party must depreciate the property received as though it was the exchanged tax-exempt
+                                                        use property if a principal purpose of the transaction is to avoid application of the <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.168(h)-1</span><a id="link24" class="link"
+                                                            href="javascript:void(0)" onclick="callCitationLink('link24','FEDREG','S1.168(h)-1','','','')">MACRS alternative depreciation system</a></span> (ADS).</p>
+                                                    <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c541000b60190b11c2ac4f1014bp2"
+                                                        class="hP">The depreciable property (tainted property) is treated in the same manner as the exchanged property (related tax-exempt use property) for purposes of determining the allowable depreciation deduction.
+                                                        Thus, the <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.168(h)-1(b)</span><a id="link26" class="link" href="javascript:void(0)" onclick="callCitationLink('link26','FEDREG','S1.168(h)-1(b)','','','')">tainted property is depreciated</a></span>
+                                                        by the taxpayer over the remaining recovery period of, and using the same depreciation method and convention as, the related tax-exempt use property</p>
+                                                    <div origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c541000b60190b11c2ac4f1014bn"
+                                                        class="hP noteContainer">
+                                                        <div class="example">Example&nbsp;</div>
+                                                        <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c541000b60190b11c2ac4f1014bnp" class="hP noteBody">Black Corporation owns all of the stock of two subsidiaries, B corporation and S corporation. Black Corporation and its two subsidiaries do not file a consolidated federal income tax return. On May
+                                                            5, 2010, B corporation purchases aircraft I for $1 million and leases it to a foreign airline whose income is not subject to U.S. taxation and which is a tax-exempt entity. On the same date,
+                                                            S corporation owns an aircraft (aircraft II) with a fair market value of $1 million, which is leased to an airline that is a U.S. taxpayer. S corporation's adjusted basis in aircraft II is $0.
+                                                            The next day, at a time when each aircraft is still worth $1 million B corporation transfers aircraft I to S corporation (subject to the lease to the foreign airline) in exchange for aircraft
+                                                            II (subject to the lease to the airline that is a U.S. taxpayer). S corporation realizes gain of $1 million on the exchange, but that gain is not recognized because the exchange is of like-kind
+                                                            properties. Following the exchange, S corporation has a $0 basis in aircraft I pursuant to the like-kind exchange rules. B corporation has a $1 million basis in aircraft II. If a principal purpose
+                                                            of the transfer is to avoid the application of the alternative depreciation system, B must recover its $1 million basis in aircraft II over the remaining recovery period of, and using the same
+                                                            depreciation method and convention as that of aircraft I, <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.168(h)-1(d)</span><a id="link29" class="link" href="javascript:void(0)"
+                                                                onclick="callCitationLink('link29','FEDREG','S1.168(h)-1(d)','','','')">the related tax-exempt use property</a></span>.</p>
+                                                    </div>
+                                                    <a name="0010bdc07c54100098d990b11c2ac4f1014d" id="0010bdc07c54100098d990b11c2ac4f1014d"></a>
+                                                    <h2 origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dh" class="hP docDisplay level-heading" style="">Tainted Property Rule</h2>
+                                                    <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dp" class="hP">The <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.168(h)-1(b)(2)</span><a id="link33" class="link" href="javascript:void(0)" onclick="callCitationLink('link33','FEDREG','S1.168(h)-1(b)(2)','','','')">tainted property rule</a></span>
+                                                        generally applies only to the portion of the taxpayer's basis in the tainted property that does not exceed the taxpayer's adjusted basis in the related tax-exempt use property prior to the transfer.</p>
+                                                    <p
+                                                        origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dp2" class="hP">In addition, the rule does not apply to the portion of the basis in tainted property received in a nontaxable transaction, including:</p>
+                                                        <ul origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014du"
+                                                            class="bull">
+                                                            <li class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui">
+                                                                <p class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014duip">distributions in complete liquidation in a controlled subsidiary;</p>
+                                                            </li>
+                                                            <li class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui2">
+                                                                <p class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui2p">transfers to corporations controlled by the transferor;</p>
+                                                            </li>
+                                                            <li class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui3">
+                                                                <p class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui3p">exchanges under tax-free reorganizations;</p>
+                                                            </li>
+                                                            <li class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui4">
+                                                                <p class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui4p">transfers in exchange for an interest in a partnership; and</p>
+                                                            </li>
+                                                            <li class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui5">
+                                                                <p class="hP" origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dui5p">distributions to a partner and transactions between members of the same affiliated group when the group files a consolidated return. </p>
+                                                            </li>
+                                                        </ul>
+                                                        <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dp3" class="hP">In these cases, the property is already bound to be depreciated under the methods used by the transferor in the nontaxable transaction. </p>
+                                                        <div origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dn"
+                                                            class="hP noteContainer">
+                                                            <div class="example">Example&nbsp;</div>
+                                                            <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dnp" class="hP noteBody">First Corporation owns all of the stock of two subsidiaries, B corporation and Z corporation. B corporation and Z corporation are members of an affiliated group that files a consolidated federal
+                                                                income tax return. B corporation and Z corporation each own identical aircraft. B corporation's aircraft (FA) is leased to a tax-exempt entity and has a fair market value of $1 million and
+                                                                an adjusted basis of $500,000. Z corporation's aircraft (DA) is leased to a U.S. taxpayer and has a fair market value of $1 million and an adjusted basis of $10,000. On May 1, 2002, the two
+                                                                subsidiaries exchange aircraft, subject to their respective leases. If a principal purpose of the transfer is to avoid the application of the alternative depreciation system, B corporation
+                                                                must depreciate $490,000 of the basis of DA over the remaining recovery period of FA, using the same depreciation method and convention. However, the remaining $10,000 must be depreciated
+                                                                using the transferor's recovery period and depreciation method for DA, under the rules for nontaxable transactions between affiliated groups that file a consolidated return.</p>
+                                                        </div>
+                                                        <p origin-xpath="dl$0010bdc07c541000b01790b11c2ac4f10148doc-level-bodyl$0010bdc07c54100098d990b11c2ac4f1014dp4" class="hP"><span><a target="_blank" href="atlas-doc-attach/attachment.pdf?src=file:///apps/WEBS/docs/attach/WKUS-TAL-DOCS-PHC/AppendixB-TableofClassLivesandRecoveryPersions-p946.pdf&amp;documentTitle=AppendixB-TableofClassLivesandRecoveryPersions-p946.pdf&amp;AtlasTicket=404180D6-714C-438F-B140-817582E592BC" onclick="logExternalLink('AppendixB-TableofClassLivesandRecoveryPersions-p946.pdf','/docmedia/attach/WKUS-TAL-DOCS-PHC/AppendixB-TableofClassLivesandRecoveryPersions-p946.pdf')" alt="Class Lives and Recovery Period" title="Class Lives and Recovery Period">Class Lives and Recovery Period</a></span></p>
+                                    </div>
+                                    <div>
+                                        <div style="padding-top:10px;"><a id="document_backToTop" href="javascript:void(0)" onclick="window.scrollTo(0,0);">Back to Top</a></div>
+                                        <div style="width:100%;"><span style="float:right; padding-right:25px;"><a id="showLink" href="javascript:toggleMetadata();" class="metadataLink"><span id="show" class="ui">Show Metadata</span><span id="hide" class="ui" style="display:none">Hide Metadata</span></a>
+                                            </span>
+                                        </div>
+                                        <div id="metadata" style="display:none;">
+                                            <h1 class="metadata">METADATA</h1>
+                                            <table class="metadata">
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_title">title</td>
+                                                    <td class="metadatavalue" id="metadata_title_value">Related Entities</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_search-title">search-title</td>
+                                                    <td class="metadatavalue" id="metadata_search-title_value"><b>Explanation</b>: Code Explanations, Related Entities</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_primary-class">primary-class</td>
+                                                    <td class="metadatavalue" id="metadata_primary-class_value">explanation/explanation</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_industry">Industry</td>
+                                                    <td class="metadatavalue" id="metadata_industry_value"></td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_wk-da_number">wk-da number</td>
+                                                    <td class="metadatavalue" id="metadata_wk-da_number_value">WKUS_TAL_11713</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_CCH_PubVol">CCH PubVol</td>
+                                                    <td class="metadatavalue" id="metadata_CCH_PubVol_value">arp10</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_wk-doc-id">wk-doc-id</td>
+                                                    <td class="metadatavalue" id="metadata_wk-doc-id_value">arp100010bdc07c54100083c390b11c2ac4f10147</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_language">language</td>
+                                                    <td class="metadatavalue" id="metadata_language_value">http://psi.oasis-open.org/iso/639/#eng</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_region">region</td>
+                                                    <td class="metadatavalue" id="metadata_region_value"><span>United States [http://wk-us.com/meta/regions/#US]</span></td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_publisher">publisher</td>
+                                                    <td class="metadatavalue" id="metadata_publisher_value">http://wk-us.com/meta/publishers/#CCH</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_normalized_link">Normalized Link Values</td>
+                                                    <td class="metadatavalue" id="metadata_normalized_link_value">P168(h)-child1</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_publishing-status">publishing-status</td>
+                                                    <td class="metadatavalue" id="metadata_publishing-status_value">new</td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_publishing-dates">publishing-dates</td>
+                                                    <td class="metadatavalue" id="metadata_publishing-dates_value">available-date: <br>modified-date: <br>revised-date: <br></td>
+                                                </tr>
+                                                <tr class="metadata">
+                                                    <td class="metadatahead" valign="top" id="metadata_document-transformation-history">document-transformation-history</td>
+                                                    <td class="metadatavalue" id="metadata_document-transformation-history_value">SOURCE-CRC: 3782737480<br>G2I-VERSION: Group2Interchange-RELEASE-05-07-0009<br>G2I-TRANSFORMATION-DATE: 2016-01-20<br>I2A-VERSION: JI2A-R7-00-01-08-0006<br>I2A-TRANSFORMATION-DATE: 2016-01-21<br></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                        <p>
+                                            <script language="javascript" type="text/javascript">
+                                                if (setCloseButtonInNewWindow && setCloseButtonInNewWindow()) {
+                                                    document.write('<a id="closeWindow" href="javascript:void(0)" onClick="top.close()">Close window</a>');
+                                                }
+                                            </script>
+                                        </p>
+                                    </div>
+                                    <div class="footer" id="docCopyrightInfo">
+                                        <script language="javascript" type="text/javascript">
+                                            setCopyrightInfo();
+                                        </script>
+                                    </div>
+                                    <div id="printDocumentFragmentBtn" style="display: none; position: absolute;" onClick="printDocumentFragment()"><img src="../resources/images/printDocumentFragmentIcon.gif" alt="Print selected text"></div>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="accmenu" style="display: none;">
+            <div class="option addnote" style="display: none">
+                <div class="labelwrapper"><span class="label"></span></div>
+                <div class="replaceByColorPicker"></div>
+            </div>
+            <div class="option addhl" style="display: none">
+                <div class="labelwrapper"><span class="label"></span></div>
+                <div class="replaceByColorPicker"></div>
+            </div>
+            <div class="option printfragment">
+                <div class="img"></div>
+                <div class="labelwrapper"><span class="label"></span></div>
+            </div>
+        </div>
+        <div id="colorPickerTemplate" class="pe_colorpicker">
+            <div class="left">
+                <div class="right">
+                    <div class="middle"><a class="pe_colorboxwrapper selected"><span></span></a>
+                        <a class="pe_opener opened"></a><span class="pe_coloroptions"><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="metricsTemplate" class="metrics" style="display: none"><span class="dateCreated"></span><br><span class="author"></span>
+            <p class="modified"><span class="lastModified"></span><span class="dateModified"></span></p>
+        </div>
+        <div id="sideBoxTemplate" class="sideBox" style="display: none">
+            <div class="readMode">
+                <div class="replaceByColorPicker"></div>
+                <a class="deleteBtn"></a>
+                <a class="editBtn"></a>
+                <div class="replaceByMetrics"></div>
+                <div class="warningText" style="display: none"><span class="text"></span></div>
+                <div class="noteText"></div>
+            </div>
+            <div class="editMode">
+                <div class="editBox">
+                    <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+                <div class="footerStrip">
+                    <a class="cancelBtn"></a>
+                    <a class="saveBtn"></a>
+                </div>
+            </div>
+        </div>
+        <div id="topBoxTemplate" class="topBox" style="display: none">
+            <div class="readMode">
+                <a class="deleteBtn"></a>
+                <a class="editBtn"></a>
+                <div class="replaceByMetrics"></div>
+                <div class="warningText" style="display: none"><span class="text"></span>
+                    <a class="action"></a>
+                </div>
+                <div class="noteText"></div>
+            </div>
+            <div class="editMode">
+                <div class="editBox">
+                    <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+                <div class="footerStrip">
+                    <a class="cancelBtn"></a>
+                    <a class="saveBtn"></a>
+                </div>
+            </div>
+        </div>
+        <div id="overlayTemplate" class="overlay" style="display: none">
+            <div class="overlay-inner">
+                <div class="editMode">
+                    <div class="editBox">
+                        <a class="closeBtn"></a>
+                        <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+                    <div class="footerStrip">
+                        <a class="cancelBtn"></a>
+                        <a class="saveBtn"></a>
+                        <a class="deleteBtn"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html></textarea>
+    </div>
+    <div class="viewType">
+      <div class="sidebyside">
+        <input type="radio" name="_viewtype" checked="checked" onclick="diffUsingJS(0);">
+        <label for="sidebyside">Side by Side Diff</label>
+      </div>
+      <div class="sidebyside">
+        <input id="inline" type="radio" name="_viewtype" onclick="diffUsingJS(1);">
+        <label for="inline">Inline Diff</label>
+      </div>
+    </div>
+    <div id="diffoutput"></div>
+  </body>
+  <script>diffUsingJS(0);</script>
+</html>

@@ -1,0 +1,34 @@
+doctype html
+html
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible', content='IE=Edge,chrome=1')
+        title jsdifflib demo
+        link(rel='stylesheet', type='text/css', href='css/diffview.css')
+        link(rel='stylesheet', type='text/css', href='css/base.css')
+        script(type='text/javascript', src='js/diffview.js')
+        script(type='text/javascript', src='js/difflib.js')
+        script(type='text/javascript', src='js/diffrun.js')
+    body
+        h1.top
+        .top
+            strong Context size (optional):
+            input#contextSize(type='text', value='')
+        .textInput
+            h2 Base Text
+            textarea#baseText
+              !{before}
+        .textInput.spacer
+            h2 New Text
+            textarea#newText
+              !{after}
+        .viewType
+            div.sidebyside
+              input(type='radio', name='_viewtype', checked='checked',onclick='diffUsingJS(0);')
+              label(for='sidebyside') Side by Side Diff
+            div.sidebyside
+              input#inline(type='radio', name='_viewtype', onclick='diffUsingJS(1);')
+              label(for='inline') Inline Diff
+        #diffoutput
+    script.
+        diffUsingJS(0);

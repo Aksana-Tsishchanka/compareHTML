@@ -1,0 +1,12 @@
+body {
+    font-size: 18px;
+}
+.container {
+    width: 50%;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.listFiles div {
+    padding-top: 10px;
+}

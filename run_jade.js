@@ -1,8 +1,9 @@
+var beautify = require('js-beautify').html;
 var fs = require('fs');
 var jade = require('jade');
 var options  = {
     pretty: true
-} 
+};
 
 function getFiles (dir, files_){
     files_ = files_ || [];
@@ -22,28 +23,32 @@ function saveToFile(fileName, data) {
     fs.writeFileSync(fileName, data , 'utf-8');
 }
 
-function produceHTML(fileNameList) {
+function produceHTML(fileNameList, dirBefore, dirAfter) {
     var length = fileNameList.length;
-    var k=0;
+    var k = 1;
+    var template = jade.compileFile('views/template.jade',options);
     for (var i=0; i<length; i++) {
         console.log(k++);
+        var fileBefore = dirBefore + '/' + fileNameList[i];
+        var fileAfter = dirAfter + '/' + fileNameList[i];
+        var dataBefore = fs.readFileSync(fileBefore, 'utf8');
+        var dataBeforeBeautify = beautify(dataBefore, {});
+
+        var dataAfter = fs.readFileSync(fileAfter, 'utf8');
+        var dataAfterBeautify = beautify(dataAfter, {});
+
+        var nameHTML = 'report/diffTool/diff_' + fileNameList[i];
+        var html = template({ after: dataAfterBeautify, before: dataBeforeBeautify });
+        saveToFile(nameHTML, html);
     }
-    /*1)в цикле пробежать по всем папкам в файле
-      2) читаем файл, записываем содержимле в переменную
-      3) компилем jade файл с нужными данными (2 переменные) в HTML файл вида diff_docId.html
-      4) сохраняем полученный HTML файл
-*/
-
-
 }
 
 var fileNameList = getFiles('before');
-console.log("fileNameList " + fileNameList);
-
 var templateFn = jade.compileFile('views/index.jade',options);
-var html = templateFn({ fileNameList: fileNameList });
+var htmlList = templateFn({ fileNameList: fileNameList });
 
-saveToFile('index.html', html);
+saveToFile('report/index.html', htmlList);
+produceHTML(fileNameList, 'before', 'after');
 
-produceHTML(fileNameList);
+console.log("Generating HTML was completed!");
 

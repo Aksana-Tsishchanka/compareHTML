@@ -1,0 +1,27 @@
+{
+  "name": "comparehtml",
+  "version": "1.0.0",
+  "description": "compare HTML tool",
+  "main": "run_jade.js",
+  "scripts": {
+    "test": "node run_jade.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aksana-Tsishchanka/compareHTML.git"
+  },
+  "keywords": [
+    "compare",
+    "html"
+  ],
+  "author": "Aksana Tsishchanka/Tolstoguzova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aksana-Tsishchanka/compareHTML/issues"
+  },
+  "homepage": "https://github.com/Aksana-Tsishchanka/compareHTML#readme",
+  "dependencies": {
+    "jade": "^1.11.0",
+    "js-beautify": "^1.6.0"
+  }
+}

@@ -1,0 +1,50 @@
+body {
+    font-size: 12px;
+    font-family: arial, Sans-Serif;
+}
+h2 {
+    margin: 0.5em 0 0.1em;
+    text-align: center;
+}
+.top {
+    text-align: center;
+}
+.textInput {
+    display: block;
+    width: 49%;
+    float: left;
+}
+textarea {
+    width:100%;
+    height:300px;
+}
+label:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+.spacer {
+    margin-left: 10px;
+}
+.viewType {
+    font-size: 18px;
+    clear: both;
+    text-align: center;
+    padding: 1em;
+}
+#diffoutput {
+    width: 100%;
+}
+/*custom styles*/
+.textInput, .textInput.spacer, .top {
+    visibility: hidden;
+    height: 0;
+}
+.author {
+    visibility: hidden;
+}
+
+input[type='radio'] {
+    width: 15px;
+    height: 15px;
+}
+

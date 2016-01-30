@@ -2,9 +2,14 @@ doctype html
 html
   head
     title List of files
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=Edge,chrome=1')
+    link(rel='stylesheet', type='text/css', href='diffTool/css/list.css')
   body
-    h1 Student List using Jade engine
-    div
-      each item in fileNameList
-        div
-          a(href="#diff_#{item}")=item
+    div.container
+      h1 List of files
+      div.listFiles
+        h3 Click to see differences in files
+        each item in fileNameList
+          div
+            a(href="diffTool/diff_#{item}")=item
