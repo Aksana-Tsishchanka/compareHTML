@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>jsdifflib demo</title>
+    <link rel="stylesheet" type="text/css" href="css/diffview.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <script type="text/javascript" src="js/diffview.js"></script>
+    <script type="text/javascript" src="js/difflib.js"></script>
+    <script type="text/javascript" src="js/diffrun.js"></script>
+  </head>
+  <body>
+    <h1 class="top"></h1>
+    <div class="top"><strong>Context size (optional):</strong>
+      <input id="contextSize" type="text" value="">
+    </div>
+    <div class="textInput">
+      <h2>Base Text</h2>
+      <textarea id="baseText"><!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:i18n="http://apache.org/cocoon/i18n/2.1" xmlns:configuration-reader="java:com.wolterskluwer.atlas.mantle.dps.cocoon.extension.ConfigurationReader">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/docDisplay.css?v=7">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/annotation.css?v=13">
+    <script src="../resources/js/format-document-fragment.js?v=2" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        var documentContext = {
+            enableNotesRendering: true,
+            enableHLRendering: true,
+            rfID: "-1",
+            showAnnotationsByDefault: false,
+            annotationDisplayMode: "SIDE_NOTES",
+            annotationAccelerator: false,
+            filterByProductId: true,
+            locale: "en",
+            annoId: "-1",
+            scroll: "false",
+            showSelected: "false"
+        };
+    </script>
+    <script src="../resources/js/logging.js?v=3" type="text/javascript"></script>
+    <script src="../resources/js/jquery.1.7.2.min.js?v=1" type="text/javascript"></script>
+    <script src="../resources/js/rangy-core.js?v=3" type="text/javascript"></script>
+    <script src="../resources/js/core.js?v=20" type="text/javascript"></script>
+    <script src="../resources/js/accelerator.js?v=8" type="text/javascript"></script>
+    <script src="../resources/js/print-fragment.js?v=4" type="text/javascript"></script>
+    <script src="../resources/js/annotation.js?v=41" type="text/javascript"></script>
+    <script src="../resources/js/annotation-widgets.js?v=18" type="text/javascript"></script>
+    <script src="../resources/js/annotation-iface.js?v=11" type="text/javascript"></script>
+    <script src="../resources/js/common.js?v=9" type="text/javascript"></script>
+    <script src="../resources/js/scion.js?v=15" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        wk.i18n.setText("pf_option_label", "Print selected text");
+        wk.i18n.setText("pf_option_title", "Print selected text");
+
+        wk.i18n.setText("color_title_TRANSPARENT", "Transparent");
+        wk.i18n.setText("color_title_YELLOW", "Yellow");
+        wk.i18n.setText("color_title_PINK", "Pink");
+        wk.i18n.setText("color_title_ORANGE", "Orange");
+        wk.i18n.setText("color_title_GREEN", "Green");
+        wk.i18n.setText("color_title_BLUE", "Blue");
+        wk.i18n.setText("add_note_option_label", "Add Note");
+        wk.i18n.setText("add_note_option_title", "Add Note for highlight");
+        wk.i18n.setText("hl_option_label", "Highlight text");
+        wk.i18n.setText("hl_option_title", "Highlight selected text");
+        wk.i18n.setText("note_handle_prompt", "Enter note here...");
+        wk.i18n.setText("note_handle_created", "Created");
+        wk.i18n.setText("note_handle_updated", "Last Modified:");
+        wk.i18n.setText("note_handle_add_note_btn_text", "Add Note");
+        wk.i18n.setText("note_handle_add_note_btn_title", "Adds note to this highlight");
+        wk.i18n.setText("note_handle_edit_btn_text", "Edit");
+        wk.i18n.setText("note_handle_edit_btn_title", "Edit");
+        wk.i18n.setText("note_handle_delete_btn_text", "Delete");
+        wk.i18n.setText("note_handle_delete_btn_title", "Delete");
+        wk.i18n.setText("note_handle_close_btn_text", "X");
+        wk.i18n.setText("note_handle_close_btn_title", "Close");
+        wk.i18n.setText("note_handle_save_btn_text", "Save");
+        wk.i18n.setText("note_handle_save_btn_title", "Save");
+        wk.i18n.setText("note_handle_cancel_btn_text", "Cancel");
+        wk.i18n.setText("note_handle_cancel_btn_title", "Cancel");
+        wk.i18n.setText("note_handle_view_in_host_msg", "View your previously highlighted passage on the Document Notes tab");
+        wk.i18n.setText("note_handle_no_user_name", "No user name");
+        wk.i18n.setText("note_author_disabled_suffix", "(disabled)");
+        wk.i18n.setText("note_author_deleted", "unknown user (deleted)");
+    </script>
+    <script src="../resources/js/cautionNoteTip.js?v=1" type="text/javascript"></script>
+    <script src="../resources/js/tooltip.js" type="text/javascript"></script>
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" onload="doOnDocumentLoaded()">
+    <div class="touchable">
+        <div id="dps-resource" class="dps-resource">
+            <div id="arp10351dbc5e7c571000b31290b11c18cbab0d" tocleafnodewkdocid="WKUS_TAL_11713#teid-2108" cshleafnodewkdocid="WKUS-TAL-DOCS-PHC-{c1a56e6a-6770-41f0-baa7-744fab3444e1}" class="docInFocus">
+                <table xmlns:cinclude="http://apache.org/cocoon/include/1.0" xmlns:xsp="http://apache.org/xsp" xmlns:xsp-request="http://apache.org/xsp/request/2.0" xmlns:dps="tbd/dps" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
+                    cellpadding="0" cellspacing="0" class="anBase annoRight editorView">
+                    <tr>
+                        <td colspan="3">
+                            <div class="topContainer">
+                                <div class="topContainer-inner"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="anCol1" rowspan="2"></td>
+                        <td></td>
+                        <td class="anCol3" rowspan="2">
+                            <div class="sideContainer">
+                                <div class="sideContainer-inner"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="anCol2">
+                            <div class="docContent">
+                                <div class="content-wrap super-class-explanation">
+                                    <div id="documentContent" origin-xpath="d" wk-doc-id="arp10351dbc5e7c571000b31290b11c18cbab0d">
+                                        <div style="padding-bottom:5px;">
+                                            <a href="javascript:void(0)" id="RFIndicator_arp10351dbc5e7c571000b31290b11c18cbab0d" onclick="openResearchFolder('arp10351dbc5e7c571000b31290b11c18cbab0d')" alt="Open Research Folder" title="Open Research Folder"
+                                                class=""></a>
+                                        </div>
+                                        <h1 class="docDisplay" id="docTitle" origin-xpath="dh">Code Explanations<span class="docHeadSpacer">,</span>What is a Controlled Group of Corporations?</h1>
+                                        <p xmlns:dps="tbd/dps">
+                                            <p>
+                                                <div origin-xpath="dri" origin-id="ri1" id="ri1" class="relBtnContainer">
+                                                    <div class="relBtn firstRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_internal_revenue_code_button" title="IRC" onclick="callRelatedLink(this,'arp10351dbc5e7c571000b31290b11c18cbab0d','internal_revenue_code_button','IRC')"><a id="relationships1_internal_revenue_code_button_link" href="javascript:void(0)" class="relBtnLink atomHL">IRC</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_regulations_button" title="Regulations" onclick="callRelatedLink(this,'arp10351dbc5e7c571000b31290b11c18cbab0d','regulations_button','Regulations')"><a id="relationships1_regulations_button_link" href="javascript:void(0)" class="relBtnLink atomHL">Regulations</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_related_tool" title="Tools" onclick="callRelatedLink(this,'arp10351dbc5e7c571000b31290b11c18cbab0d','related_tool','Tools')"><a id="relationships1_related_tool_link" href="javascript:void(0)" class="relBtnLink atomHL">Tools</a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </p>
+                                        </p>
+                                        <a name="351dbc5e7c571000a2c390b11c18cbab0f" id="351dbc5e7c571000a2c390b11c18cbab0f"></a>
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr style="padding-bottom:10px">
+                                                <td valign="top" style="padding-right:8px;white-space:nowrap;">
+                                                    <p class="hP"></p>
+                                                </td>
+                                                <td valign="top">
+                                                    <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyp" class="hP">Allocation of the <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1561(a)</span><a id="link6" class="link" href="javascript:void(0)" onclick="callCitationLink('link6','IRC-FILE','S1561(a)','','','')">tax benefit items</a></span>
+                                                        (for example, graduated tax bracket amounts) applies only to <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(b)</span><a id="link7" class="link" href="javascript:void(0)"
+                                                            onclick="callCitationLink('link7','IRC-FILE','S1563(b)','','','')">component members</a></span> of a <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(a)</span><a id="link8"
+                                                            class="link" href="javascript:void(0)" onclick="callCitationLink('link8','IRC-FILE','S1563(a)','','','')">controlled group of corporations</a></span>. Mechanical ownership tests are used to determine
+                                                        if a controlled group situation exists.</p>
+                                                    <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyp2" class="hP">There are basically three types of controlled <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(a)(1)(i)</span><a id="link10" class="link" href="javascript:void(0)" onclick="callCitationLink('link10','FEDREG','S1.1563-1(a)(1)(i)','','','')">corporate groups</a></span>:</p>
+                                                    <table
+                                                        border="0" cellspacing="0" cellpadding="0" width="100%" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyo">
+                                                        <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyoi">
+                                                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(1)</span></td>
+                                                            <td style="padding-left:6pt">
+                                                                <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyoip">a parent-subsidiary controlled group;</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyoi2">
+                                                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(2)</span></td>
+                                                            <td style="padding-left:6pt">
+                                                                <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyoi2p">a brother-sister controlled group; and</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyoi3">
+                                                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(3)</span></td>
+                                                            <td style="padding-left:6pt">
+                                                                <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyoi3p">a combined group.</p>
+                                                            </td>
+                                                        </tr>
+                                        </table>
+                                        <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyp3" class="hP">There is also a <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(a)(4)</span><a id="link19" class="link" href="javascript:void(0)" onclick="callCitationLink('link19','IRC-FILE','S1563(a)(4)','','','')">life insurance controlled group</a></span>
+                                            consisting of two or more life insurance companies each of which is a member of a parent-subsidiary, brother-sister, or combined group.</p>
+                                        <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyp4"
+                                            style="margin-bottom:10pt;">A corporation that satisfies the controlled group rules for stock ownership and qualification is a member of the group, without regard to its status as a <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(a)(1)(ii)</span>
+                                            <a
+                                                id="link21" class="link" href="javascript:void(0)" onclick="callCitationLink('link21','FEDREG','S1.1563-1(a)(1)(ii)','','','')">component member</a>
+                                                </span>. In addition, a corporation that is treated as an excluded member of a <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(b)(2)</span><a id="link22" class="link" href="javascript:void(0)"
+                                                    onclick="callCitationLink('link22','IRC-FILE','S1563(b)(2)','','','')">controlled group</a></span>, while not a component member <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(b)(1)</span>
+                                                <a
+                                                    id="link23" class="link" href="javascript:void(0)" onclick="callCitationLink('link23','IRC-FILE','S1563(b)(1)','','','')">of the group</a>
+                                                    </span>, is nevertheless a member of the controlled group. Thus, a corporation whose stock is held by an excluded member may be treated as a component member of the controlled group.</p>
+                                        <a name="351dbc5e7c571000860690b11c18cbab010"
+                                            id="351dbc5e7c571000860690b11c18cbab010"></a>
+                                        <h2 origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010h" class="hP docDisplay level-heading" style="">Parent-subsidiary controlled group</h2>
+                                        <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010p" class="hP">A parent-subsidiary controlled group <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(a)(1)</span><a id="link27" class="link" href="javascript:void(0)" onclick="callCitationLink('link27','IRC-FILE','S1563(a)(1)','','','')">exists when</a></span>:</p>
+                                        <table
+                                            border="0" cellspacing="0" cellpadding="0" width="100%" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010o">
+                                            <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010oi">
+                                                <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(1)</span></td>
+                                                <td style="padding-left:6pt">
+                                                    <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010oip">one or more chains of corporations are connected through stock ownership with a common parent corporation;</p>
+                                                </td>
+                                            </tr>
+                                            <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010oi2">
+                                                <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(2)</span></td>
+                                                <td style="padding-left:6pt">
+                                                    <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010oi2p">80 percent or more of the voting power or value of the stock of each corporation in the group other than the parent is owned by one or more corporations in the group; and</p>
+                                                </td>
+                                            </tr>
+                                            <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010oi3">
+                                                <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(3)</span></td>
+                                                <td style="padding-left:6pt">
+                                                    <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010oi3p">the common parent owns at least 80 percent of the voting power or value of the stock of one of the other corporations in the group (not counting stock owned directly by other <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(a)(2)</span>
+                                                        <a
+                                                            id="link35" class="link" href="javascript:void(0)" onclick="callCitationLink('link35','FEDREG','S1.1563-1(a)(2)','','','')">members of the group). </a>
+                                                            </span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                </table>
+                <div origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010n" class="hP noteContainer">
+                    <div class="example">Example (1)&nbsp;</div>
+                    <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010np" class="hP noteBody">Corporation A owns 80 percent of Corporation B and 80 percent of corporation C. B and C each own 40 percent of D. A, B, C and D are all members of a <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(a)(2)(ii)</span>
+                        <a
+                            id="link38" class="link" href="javascript:void(0)" onclick="callCitationLink('link38','FEDREG','S1.1563-1(a)(2)(ii)','','','')">parent-subsidiary controlled group</a>
+                            </span>.</p>
+                </div>
+                <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010p2" class="hP">In determining whether the 80-percent test is met, under the constructive ownership rules, if a person has an option to acquire stock (or an option to acquire an option), this stock <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(e)(1)</span>
+                    <a
+                        id="link40" class="link" href="javascript:void(0)" onclick="callCitationLink('link40','IRC-FILE','S1563(e)(1)','','','')">is considered owned</a>
+                        </span> by that person. Further, the <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(e)(2)</span><a id="link41" class="link" href="javascript:void(0)" onclick="callCitationLink('link41','IRC-FILE','S1563(e)(2)','','','')">partnership</a></span>
+                        and <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(e)(3)</span><a id="link42" class="link" href="javascript:void(0)" onclick="callCitationLink('link42','IRC-FILE','S1563(e)(3)','','','')">trust and estate</a></span>
+                        attribution rules must also be <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-3</span><a id="link43" class="link" href="javascript:void(0)" onclick="callCitationLink('link43','FEDREG','S1.1563-3','','','')">taken into account</a></span>.</p>
+                <a
+                    name="351dbc5e7c571000b6f990b11c18cbab012" id="351dbc5e7c571000b6f990b11c18cbab012"></a>
+                    <h2 origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012h" class="hP docDisplay level-heading" style="">Brother-sister controlled group</h2>
+                    <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012p" class="hP">For purposes of <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1561</span><a id="link47" class="link" href="javascript:void(0)" onclick="callCitationLink('link47','IRC-FILE','S1561','','','')">IRC §1561</a></span>,
+                        a brother-sister controlled group exists if five or fewer persons, who are individuals, trusts, or estates, own more than 50 percent of the total combined voting power, or more than 50 percent of the total value of all shares,
+                        of two or more corporations, considering the stock ownership of each person only to the extent the stock ownership is identical with respect <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(a)(2)</span>
+                        <a
+                            id="link48" class="link" href="javascript:void(0)" onclick="callCitationLink('link48','IRC-FILE','S1563(a)(2)','','','')">to each corporation</a>
+                            </span>. </p>
+                    <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012p2" class="hP">For purposes of other Code provisions other than <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1561</span><a id="link50" class="link" href="javascript:void(0)" onclick="callCitationLink('link50','IRC-FILE','S1561','','','')">IRC §1561</a></span>,
+                        the five or fewer persons <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(f)(5)</span><a id="link51" class="link" href="javascript:void(0)" onclick="callCitationLink('link51','IRC-FILE','S1563(f)(5)','','','')">must own</a></span>:</p>
+                    <table
+                        border="0" cellspacing="0" cellpadding="0" width="100%" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012o">
+                        <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012oi">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(1)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012oip">at least 80 percent of the total combined voting power, or at least 80 percent of the total value, of each corporation; and</p>
+                            </td>
+                        </tr>
+                        <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012oi2">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(2)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012oi2p">must also possess more than 50 percent of the total combined voting power, or more than 50 percent of the total value, of each corporation, taking into account the stock ownership of each person only to the extent the stock
+                                    ownership is identical with respect to each such corporation.</p>
+                            </td>
+                        </tr>
+                        </table>
+                        <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012p3" class="hP">The brother-sister controlled group definition for purposes of the <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1561</span><a id="link58" class="link" href="javascript:void(0)" onclick="callCitationLink('link58','IRC-FILE','S1561','','','')">tax benefit limitation rules</a></span>
+                            excludes the 80-percent ownership test in order to prevent related corporations from circumventing its limitations. The definition of a brother-sister controlled group containing the 80-percent ownership test, however, applies
+                            for purposes of other Code provisions that incorporate or refer to the <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563</span><a id="link59" class="link" href="javascript:void(0)" onclick="callCitationLink('link59','IRC-FILE','S1563','','','')">IRC §1563</a></span>
+                            definition of a brother-sister controlled group.</p>
+                        <div origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012n" class="hP noteContainer">
+                            <div class="example">Example&nbsp;(2)</div>
+                            <table class="noteIndent" id="351dbc5e7c571000a09c90b11c18cbab014" width="800">
+                                <colgroup>
+                                    <col span="1" width="5%">
+                                    <col span="1" width="41%">
+                                    <col span="1" width="5%">
+                                    <col span="1" width="2%">
+                                    <col span="1" width="5%">
+                                    <col span="1" width="5%">
+                                    <col span="1" width="2%">
+                                    <col span="1" width="5%">
+                                    <col span="1" width="5%">
+                                    <col span="1" width="2%">
+                                    <col span="1" width="5%">
+                                    <col span="1" width="8%">
+                                    <col span="1" width="2%">
+                                    <col span="1" width="8%">
+                                </colgroup>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr">
+                                    <td>
+                                        <p class="hP" style="margin-bottom:0px;"><br></p>
+                                    </td>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr2">
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" align="center" colspan="3" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>Identical stock</i></p>
+                                    </th>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr3">
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" align="center" colspan="9" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>Stock ownership in %</i></p>
+                                    </th>
+                                    <th class="xhtml" align="center" colspan="3" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>ownership in</i></p>
+                                    </th>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr4">
+                                    <th class="xhtml" align="left" colspan="2" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>Shareholders</i></p>
+                                    </th>
+                                    <th class="xhtml" align="center" colspan="3" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>Corp. 1</i></p>
+                                    </th>
+                                    <th class="xhtml" align="center" colspan="3" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>Corp. 2</i></p>
+                                    </th>
+                                    <th class="xhtml" align="center" colspan="3" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>Corp. 3</i></p>
+                                    </th>
+                                    <th class="xhtml" align="center" colspan="3" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>%</i></p>
+                                    </th>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr5">
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="left" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">A</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">40</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">26</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">45</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">26</p>
+                                    </td>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr6">
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="left" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">B</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">25</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">40</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">45</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">25</p>
+                                    </td>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr7">
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="left" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">C</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">20</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">30</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">1</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">1</p>
+                                    </td>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr8">
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"></span></td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"></span></td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"></span></td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"></span></td>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr9">
+                                    <td align="left" colspan="2" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">Total (A + B + C)<sup><a class="footnoteRef" name="foottbld19649e251fn317-reference" id="foottbld19649e251fn317-reference" href="javascript:void(0)" onClick="scrollToAnchor('foottbld19649e251fn317')">*</a></sup></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">85</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">96</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">91</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">52</p>
+                                    </td>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr10">
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"><hr style="border-color:black;"></span></td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"><hr style="border-color:black;"></span></td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"><hr style="border-color:black;"></span></td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"><hr style="border-color:black;"></span></td>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr11">
+                                    <td align="left" colspan="14" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table cellpadding="0" cellspacing="0" border="0" class="noteIndent">
+                                <tr>
+                                    <td class="tableNote" align="right" valign="top"><sup><a class="footnoteRef" name="foottbld19649e251fn317" id="foottbld19649e251fn317" href="javascript:void(0)" onClick="scrollToAnchor('foottbld19649e251fn317-reference')"><span class="docHeadSpacer">*</span></a></sup></td>
+                                    <td
+                                        align="left" valign="top">
+                                        <p class="hP footnote" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012nfootnotesfop">The remaining stock in Corporations 1—3 is owned by unrelated third parties.</p>
+                                        </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012p4" class="hP">In this case, a brother-sister controlled group comprised of Corporations 1, 2, and 3 exists for purposes of <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1561</span><a id="link320" class="link" href="javascript:void(0)"
+                                onclick="callCitationLink('link320','IRC-FILE','S1561','','','')">IRC §1561</a></span>, and other Code provisions referring to a brother-sister controlled group, because both the 80 percent and the 50 percent tests are met.</p>
+                        <div
+                            origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012n2" class="hP noteContainer">
+                            <div class="example">Example&nbsp;(3)</div>
+                            <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012n2p" class="hP noteBody">Assume the same facts as in Example (2), above, <i>except</i> that C owns no stock in Corporation 3. In that case, a brother-sister controlled group comprised of Corporations 1, 2, and 3 exists only for purposes of <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1561</span>
+                                <a
+                                    id="link324" class="link" href="javascript:void(0)" onclick="callCitationLink('link324','IRC-FILE','S1561','','','')">IRC §1561</a>
+                                    </span> because only the 50-percent <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(a)(2)</span><a id="link325" class="link" href="javascript:void(0)" onclick="callCitationLink('link325','IRC-FILE','S1563(a)(2)','','','')">ownership test</a></span>
+                                    is met. However, a brother-sister controlled group still exists for purposes of other Code provisions under <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(f)(5)</span><a id="link326" class="link"
+                                        href="javascript:void(0)" onclick="callCitationLink('link326','IRC-FILE','S1563(f)(5)','','','')">IRC §1563(f)(5)</a></span>, but it is limited to just Corporations 1 and 2 because both the 50-percent and 80-percent
+                                    tests are met only with respect to these two corporations. Since C owns no stock in Corporation 3, Corporation 3 is not a component of that group, even though A and B together own 90 percent of the stock <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(a)(3)</span>
+                                    <a
+                                        id="link327" class="link" href="javascript:void(0)" onclick="callCitationLink('link327','FEDREG','S1.1563-1(a)(3)','','','')">in Corporation 3</a>
+                                        </span>.</p>
+                            </div>
+                            <a name="351dbc5e7c57100086c190b11c18cbab016" id="351dbc5e7c57100086c190b11c18cbab016"></a>
+                            <h2 origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100086c190b11c18cbab016h" class="hP docDisplay level-heading" style="">Election</h2>
+                            <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100086c190b11c18cbab016p" class="hP">A corporation will not be treated as a member of more than one brother-sister groups. The corporation may elect the group in which it wishes to be included by filing a statement to that effect on or before the due date (including
+                                extensions) for the filing of its income tax return. The statement must provide a description of each of the controlled groups of which the corporation could be a member, including the name, employer identification number
+                                and stock ownership of each component member of each group. The corporation must designate in the statement the controlled group in which the corporation elects to <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(c)(2)(i)</span>
+                                <a
+                                    id="link331" class="link" href="javascript:void(0)" onclick="callCitationLink('link331','FEDREG','S1.1563-1(c)(2)(i)','','','')">be a member</a>
+                                    </span>.</p>
+                            <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100086c190b11c18cbab016p2" class="hP">If more than one corporation could be a component member of more than one controlled group, those corporations that elect to be members of the same controlled group must file a single statement. The original statement must
+                                be filed with the original tax return (including any amended return filed on or before the due date (including extensions) of the return) of the corporation that has the tax year including the December 31 which ends on
+                                the earliest date. That corporation must provide a copy of the statement to each other corporation included in the statement and must make a representation in its statement that it has done so. Each corporation must retain
+                                either the original or a copy of the statement <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(c)(2)(ii)</span><a id="link333" class="link" href="javascript:void(0)" onclick="callCitationLink('link333','FEDREG','S1.1563-1(c)(2)(ii)','','','')">for its records</a></span>.</p>
+                            <p
+                                origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100086c190b11c18cbab016p3" class="hP">The election is irrevocable and effective until a change in the stock ownership of the corporation results in a termination of its membership in the controlled group in which the corporation has been included. If an election
+                                is not filed, the IRS determines the group in which the corporation is to be included. The IRS's determination is binding for all subsequent years unless the corporation files a valid election or until a change in the stock
+                                ownership of the corporation results in a termination of its membership <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(c)(2)(iii)</span><a id="link335" class="link" href="javascript:void(0)"
+                                    onclick="callCitationLink('link335','FEDREG','S1.1563-1(c)(2)(iii)','','','')">in the controlled group</a></span>.</p>
+                                <a name="351dbc5e7c57100091ef90b11c18cbab017" id="351dbc5e7c57100091ef90b11c18cbab017"></a>
+                                <h2 origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100091ef90b11c18cbab017h" class="hP docDisplay level-heading" style="">Combined groups</h2>
+                                <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100091ef90b11c18cbab017p" class="hP">Combinations of brother-sister and parent-subsidiary controlled groups are possible. The combination would be treated as one controlled group. There must, however, be at least three corporations, and at least one of the
+                                    corporations must be a common parent in a parent-subsidiary controlled group and part of a <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(a)(3)</span><a id="link339" class="link" href="javascript:void(0)"
+                                        onclick="callCitationLink('link339','IRC-FILE','S1563(a)(3)','','','')">brother-sister controlled group</a></span>.</p>
+                                <div origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100091ef90b11c18cbab017n"
+                                    class="hP noteContainer">
+                                    <div class="example">Example&nbsp;(4)</div>
+                                    <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100091ef90b11c18cbab017np" class="hP noteBody">A single individual owns 80 percent of Corporations D and E. This would be a brother-sister controlled group under both <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(a)(2)</span><a id="link342"
+                                            class="link" href="javascript:void(0)" onclick="callCitationLink('link342','IRC-FILE','S1563(a)(2)','','','')">IRC §1563(a)(2)</a></span> and <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(f)(5)</span>
+                                        <a
+                                            id="link343" class="link" href="javascript:void(0)" onclick="callCitationLink('link343','IRC-FILE','S1563(f)(5)','','','')">1563(f)(5)</a>
+                                            </span>. However, if that individual also owned the stock of Corporation A in Example (1), above, A, B, C, D, and E would all be treated as members of a controlled group of corporations.</p>
+                                </div>
+                                </td>
+                                </tr>
+                                </table>
+                                </div>
+                                <div>
+                                    <div style="padding-top:10px;"><a id="document_backToTop" href="javascript:void(0)" onclick="window.scrollTo(0,0);">Back to Top</a></div>
+                                    <div style="width:100%;"><span style="float:right; padding-right:25px;"><a id="showLink" href="javascript:toggleMetadata();" class="metadataLink"><span id="show" class="ui">Show Metadata</span><span id="hide" class="ui" style="display:none">Hide Metadata</span></a>
+                                        </span>
+                                    </div>
+                                    <div id="metadata" style="display:none;">
+                                        <h1 class="metadata">METADATA</h1>
+                                        <table class="metadata">
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_title">title</td>
+                                                <td class="metadatavalue" id="metadata_title_value">What is a Controlled Group of Corporations?</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_search-title">search-title</td>
+                                                <td class="metadatavalue" id="metadata_search-title_value"><b>Explanation</b>: Code Explanations, What is a Controlled Group of Corporations?</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_primary-class">primary-class</td>
+                                                <td class="metadatavalue" id="metadata_primary-class_value">explanation/explanation</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_industry">Industry</td>
+                                                <td class="metadatavalue" id="metadata_industry_value"></td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_wk-da_number">wk-da number</td>
+                                                <td class="metadatavalue" id="metadata_wk-da_number_value">WKUS_TAL_11713</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_CCH_PubVol">CCH PubVol</td>
+                                                <td class="metadatavalue" id="metadata_CCH_PubVol_value">arp10</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_wk-doc-id">wk-doc-id</td>
+                                                <td class="metadatavalue" id="metadata_wk-doc-id_value">arp10351dbc5e7c571000b31290b11c18cbab0d</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_language">language</td>
+                                                <td class="metadatavalue" id="metadata_language_value">http://psi.oasis-open.org/iso/639/#eng</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_region">region</td>
+                                                <td class="metadatavalue" id="metadata_region_value"><span>United States [http://wk-us.com/meta/regions/#US]</span></td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_publisher">publisher</td>
+                                                <td class="metadatavalue" id="metadata_publisher_value">http://wk-us.com/meta/publishers/#CCH</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_normalized_link">Normalized Link Values</td>
+                                                <td class="metadatavalue" id="metadata_normalized_link_value">P1563(a)</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_publishing-status">publishing-status</td>
+                                                <td class="metadatavalue" id="metadata_publishing-status_value">new</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_publishing-dates">publishing-dates</td>
+                                                <td class="metadatavalue" id="metadata_publishing-dates_value">available-date: <br>modified-date: <br>revised-date: <br></td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_document-transformation-history">document-transformation-history</td>
+                                                <td class="metadatavalue" id="metadata_document-transformation-history_value">SOURCE-CRC: 2418673670<br>G2I-VERSION: Group2Interchange-RELEASE-05-07-0009<br>G2I-TRANSFORMATION-DATE: 2016-01-20<br>I2A-VERSION: JI2A-R7-00-01-08-0006<br>I2A-TRANSFORMATION-DATE: 2016-01-21<br></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <p>
+                                        <script language="javascript" type="text/javascript">
+                                            if (setCloseButtonInNewWindow && setCloseButtonInNewWindow()) {
+                                                document.write('<a id="closeWindow" href="javascript:void(0)" onClick="top.close()">Close window</a>');
+                                            }
+                                        </script>
+                                    </p>
+                                </div>
+                                <div class="footer" id="docCopyrightInfo">
+                                    <script language="javascript" type="text/javascript">
+                                        setCopyrightInfo();
+                                    </script>
+                                </div>
+                                <div id="printDocumentFragmentBtn" style="display: none; position: absolute;" onClick="printDocumentFragment()"><img src="../resources/images/printDocumentFragmentIcon.gif" alt="Print selected text"></div>
+                                </div>
+            </div>
+            </td>
+            </tr>
+            </table>
+        </div>
+    </div>
+    <div class="accmenu" style="display: none;">
+        <div class="option addnote" style="display: none">
+            <div class="labelwrapper"><span class="label"></span></div>
+            <div class="replaceByColorPicker"></div>
+        </div>
+        <div class="option addhl" style="display: none">
+            <div class="labelwrapper"><span class="label"></span></div>
+            <div class="replaceByColorPicker"></div>
+        </div>
+        <div class="option printfragment">
+            <div class="img"></div>
+            <div class="labelwrapper"><span class="label"></span></div>
+        </div>
+    </div>
+    <div id="colorPickerTemplate" class="pe_colorpicker">
+        <div class="left">
+            <div class="right">
+                <div class="middle"><a class="pe_colorboxwrapper selected"><span></span></a>
+                    <a class="pe_opener opened"></a><span class="pe_coloroptions"><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="metricsTemplate" class="metrics" style="display: none"><span class="dateCreated"></span><br><span class="author"></span>
+        <p class="modified"><span class="lastModified"></span><span class="dateModified"></span></p>
+    </div>
+    <div id="sideBoxTemplate" class="sideBox" style="display: none">
+        <div class="readMode">
+            <div class="replaceByColorPicker"></div>
+            <a class="deleteBtn"></a>
+            <a class="editBtn"></a>
+            <div class="replaceByMetrics"></div>
+            <div class="warningText" style="display: none"><span class="text"></span></div>
+            <div class="noteText"></div>
+        </div>
+        <div class="editMode">
+            <div class="editBox">
+                <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+            <div class="footerStrip">
+                <a class="cancelBtn"></a>
+                <a class="saveBtn"></a>
+            </div>
+        </div>
+    </div>
+    <div id="topBoxTemplate" class="topBox" style="display: none">
+        <div class="readMode">
+            <a class="deleteBtn"></a>
+            <a class="editBtn"></a>
+            <div class="replaceByMetrics"></div>
+            <div class="warningText" style="display: none"><span class="text"></span>
+                <a class="action"></a>
+            </div>
+            <div class="noteText"></div>
+        </div>
+        <div class="editMode">
+            <div class="editBox">
+                <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+            <div class="footerStrip">
+                <a class="cancelBtn"></a>
+                <a class="saveBtn"></a>
+            </div>
+        </div>
+    </div>
+    <div id="overlayTemplate" class="overlay" style="display: none">
+        <div class="overlay-inner">
+            <div class="editMode">
+                <div class="editBox">
+                    <a class="closeBtn"></a>
+                    <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+                <div class="footerStrip">
+                    <a class="cancelBtn"></a>
+                    <a class="saveBtn"></a>
+                    <a class="deleteBtn"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html></textarea>
+    </div>
+    <div class="textInput spacer">
+      <h2>New Text</h2>
+      <textarea id="newText"><!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:i18n="http://apache.org/cocoon/i18n/2.1" xmlns:configuration-reader="java:com.wolterskluwer.atlas.mantle.dps.cocoon.extension.ConfigurationReader">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/docDisplay.css?v=7">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/annotation.css?v=13">
+    <script src="../resources/js/format-document-fragment.js?v=2" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        var documentContext = {
+            enableNotesRendering: true,
+            enableHLRendering: true,
+            rfID: "-1",
+            showAnnotationsByDefault: false,
+            annotationDisplayMode: "SIDE_NOTES",
+            annotationAccelerator: false,
+            filterByProductId: true,
+            locale: "en",
+            annoId: "-1",
+            scroll: "false",
+            showSelected: "false"
+        };
+    </script>
+    <script src="../resources/js/logging.js?v=3" type="text/javascript"></script>
+    <script src="../resources/js/jquery.1.7.2.min.js?v=1" type="text/javascript"></script>
+    <script src="../resources/js/rangy-core.js?v=3" type="text/javascript"></script>
+    <script src="../resources/js/core.js?v=20" type="text/javascript"></script>
+    <script src="../resources/js/accelerator.js?v=8" type="text/javascript"></script>
+    <script src="../resources/js/print-fragment.js?v=4" type="text/javascript"></script>
+    <script src="../resources/js/annotation.js?v=41" type="text/javascript"></script>
+    <script src="../resources/js/annotation-widgets.js?v=18" type="text/javascript"></script>
+    <script src="../resources/js/annotation-iface.js?v=11" type="text/javascript"></script>
+    <script src="../resources/js/common.js?v=9" type="text/javascript"></script>
+    <script src="../resources/js/scion.js?v=15" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        wk.i18n.setText("pf_option_label", "Print selected text");
+        wk.i18n.setText("pf_option_title", "Print selected text");
+
+        wk.i18n.setText("color_title_TRANSPARENT", "Transparent");
+        wk.i18n.setText("color_title_YELLOW", "Yellow");
+        wk.i18n.setText("color_title_PINK", "Pink");
+        wk.i18n.setText("color_title_ORANGE", "Orange");
+        wk.i18n.setText("color_title_GREEN", "Green");
+        wk.i18n.setText("color_title_BLUE", "Blue");
+        wk.i18n.setText("add_note_option_label", "Add Note");
+        wk.i18n.setText("add_note_option_title", "Add Note for highlight");
+        wk.i18n.setText("hl_option_label", "Highlight text");
+        wk.i18n.setText("hl_option_title", "Highlight selected text");
+        wk.i18n.setText("note_handle_prompt", "Enter note here...");
+        wk.i18n.setText("note_handle_created", "Created");
+        wk.i18n.setText("note_handle_updated", "Last Modified:");
+        wk.i18n.setText("note_handle_add_note_btn_text", "Add Note");
+        wk.i18n.setText("note_handle_add_note_btn_title", "Adds note to this highlight");
+        wk.i18n.setText("note_handle_edit_btn_text", "Edit");
+        wk.i18n.setText("note_handle_edit_btn_title", "Edit");
+        wk.i18n.setText("note_handle_delete_btn_text", "Delete");
+        wk.i18n.setText("note_handle_delete_btn_title", "Delete");
+        wk.i18n.setText("note_handle_close_btn_text", "X");
+        wk.i18n.setText("note_handle_close_btn_title", "Close");
+        wk.i18n.setText("note_handle_save_btn_text", "Save");
+        wk.i18n.setText("note_handle_save_btn_title", "Save");
+        wk.i18n.setText("note_handle_cancel_btn_text", "Cancel");
+        wk.i18n.setText("note_handle_cancel_btn_title", "Cancel");
+        wk.i18n.setText("note_handle_view_in_host_msg", "View your previously highlighted passage on the Document Notes tab");
+        wk.i18n.setText("note_handle_no_user_name", "No user name");
+        wk.i18n.setText("note_author_disabled_suffix", "(disabled)");
+        wk.i18n.setText("note_author_deleted", "unknown user (deleted)");
+    </script>
+    <script src="../resources/js/cautionNoteTip.js?v=1" type="text/javascript"></script>
+    <script src="../resources/js/tooltip.js" type="text/javascript"></script>
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" onload="doOnDocumentLoaded()">
+    <div class="touchable">
+        <div id="dps-resource" class="dps-resource">
+            <div id="arp10351dbc5e7c571000b31290b11c18cbab0d" tocleafnodewkdocid="WKUS_TAL_11713#teid-2108" cshleafnodewkdocid="WKUS-TAL-DOCS-PHC-{c1a56e6a-6770-41f0-baa7-744fab3444e1}" class="docInFocus">
+                <table xmlns:cinclude="http://apache.org/cocoon/include/1.0" xmlns:xsp="http://apache.org/xsp" xmlns:xsp-request="http://apache.org/xsp/request/2.0" xmlns:dps="tbd/dps" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
+                    cellpadding="0" cellspacing="0" class="anBase annoRight editorView">
+                    <tr>
+                        <td colspan="3">
+                            <div class="topContainer">
+                                <div class="topContainer-inner"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="anCol1" rowspan="2"></td>
+                        <td></td>
+                        <td class="anCol3" rowspan="2">
+                            <div class="sideContainer">
+                                <div class="sideContainer-inner"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="anCol2">
+                            <div class="docContent">
+                                <div class="content-wrap super-class-explanation">
+                                    <div id="documentContent" origin-xpath="d" wk-doc-id="arp10351dbc5e7c571000b31290b11c18cbab0d">
+                                        <div style="padding-bottom:5px;">
+                                            <a href="javascript:void(0)" id="RFIndicator_arp10351dbc5e7c571000b31290b11c18cbab0d" onclick="openResearchFolder('arp10351dbc5e7c571000b31290b11c18cbab0d')" alt="Open Research Folder" title="Open Research Folder"
+                                                class=""></a>
+                                        </div>
+                                        <h1 class="docDisplay" id="docTitle" origin-xpath="dh">Code Explanations<span class="docHeadSpacer">,</span>What is a Controlled Group of Corporations?</h1>
+                                        <p xmlns:dps="tbd/dps">
+                                            <p>
+                                                <div origin-xpath="dri" origin-id="ri1" id="ri1" class="relBtnContainer">
+                                                    <div class="relBtn firstRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_internal_revenue_code_button" title="IRC" onclick="callRelatedLink(this,'arp10351dbc5e7c571000b31290b11c18cbab0d','internal_revenue_code_button','IRC')"><a id="relationships1_internal_revenue_code_button_link" href="javascript:void(0)" class="relBtnLink atomHL">IRC</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_regulations_button" title="Regulations" onclick="callRelatedLink(this,'arp10351dbc5e7c571000b31290b11c18cbab0d','regulations_button','Regulations')"><a id="relationships1_regulations_button_link" href="javascript:void(0)" class="relBtnLink atomHL">Regulations</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_related_tool" title="Tools" onclick="callRelatedLink(this,'arp10351dbc5e7c571000b31290b11c18cbab0d','related_tool','Tools')"><a id="relationships1_related_tool_link" href="javascript:void(0)" class="relBtnLink atomHL">Tools</a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </p>
+                                        </p>
+                                        <a name="351dbc5e7c571000a2c390b11c18cbab0f" id="351dbc5e7c571000a2c390b11c18cbab0f"></a>
+                                        <table cellpadding="0" cellspacing="0" border="0">
+                                            <tr style="padding-bottom:10px">
+                                                <td valign="top" style="padding-right:8px;white-space:nowrap;">
+                                                    <p class="hP"></p>
+                                                </td>
+                                                <td valign="top">
+                                                    <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyp" class="hP">Allocation of the <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1561(a)</span><a id="link6" class="link" href="javascript:void(0)" onclick="callCitationLink('link6','IRC-FILE','S1561(a)','','','')">tax benefit items</a></span>
+                                                        (for example, graduated tax bracket amounts) applies only to <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(b)</span><a id="link7" class="link" href="javascript:void(0)"
+                                                            onclick="callCitationLink('link7','IRC-FILE','S1563(b)','','','')">component members</a></span> of a <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(a)</span><a id="link8"
+                                                            class="link" href="javascript:void(0)" onclick="callCitationLink('link8','IRC-FILE','S1563(a)','','','')">controlled group of corporations</a></span>. Mechanical ownership tests are used to determine
+                                                        if a controlled group situation exists.</p>
+                                                    <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyp2" class="hP">There are basically three types of controlled <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(a)(1)(i)</span><a id="link10" class="link" href="javascript:void(0)" onclick="callCitationLink('link10','FEDREG','S1.1563-1(a)(1)(i)','','','')">corporate groups</a></span>:</p>
+                                                    <table
+                                                        border="0" cellspacing="0" cellpadding="0" width="100%" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyo">
+                                                        <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyoi">
+                                                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(1)</span></td>
+                                                            <td style="padding-left:6pt">
+                                                                <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyoip">a parent-subsidiary controlled group;</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyoi2">
+                                                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(2)</span></td>
+                                                            <td style="padding-left:6pt">
+                                                                <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyoi2p">a brother-sister controlled group; and</p>
+                                                            </td>
+                                                        </tr>
+                                                        <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyoi3">
+                                                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(3)</span></td>
+                                                            <td style="padding-left:6pt">
+                                                                <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyoi3p">a combined group.</p>
+                                                            </td>
+                                                        </tr>
+                                        </table>
+                                        <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyp3" class="hP">There is also a <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(a)(4)</span><a id="link19" class="link" href="javascript:void(0)" onclick="callCitationLink('link19','IRC-FILE','S1563(a)(4)','','','')">life insurance controlled group</a></span>
+                                            consisting of two or more life insurance companies each of which is a member of a parent-subsidiary, brother-sister, or combined group.</p>
+                                        <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyp4"
+                                            style="margin-bottom:10pt;">A corporation that satisfies the controlled group rules for stock ownership and qualification is a member of the group, without regard to its status as a <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(a)(1)(ii)</span>
+                                            <a
+                                                id="link21" class="link" href="javascript:void(0)" onclick="callCitationLink('link21','FEDREG','S1.1563-1(a)(1)(ii)','','','')">component member</a>
+                                                </span>. In addition, a corporation that is treated as an excluded member of a <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(b)(2)</span><a id="link22" class="link" href="javascript:void(0)"
+                                                    onclick="callCitationLink('link22','IRC-FILE','S1563(b)(2)','','','')">controlled group</a></span>, while not a component member <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(b)(1)</span>
+                                                <a
+                                                    id="link23" class="link" href="javascript:void(0)" onclick="callCitationLink('link23','IRC-FILE','S1563(b)(1)','','','')">of the group</a>
+                                                    </span>, is nevertheless a member of the controlled group. Thus, a corporation whose stock is held by an excluded member may be treated as a component member of the controlled group.</p>
+                                        <a name="351dbc5e7c571000860690b11c18cbab010"
+                                            id="351dbc5e7c571000860690b11c18cbab010"></a>
+                                        <h2 origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010h" class="hP docDisplay level-heading" style="">Parent-subsidiary controlled group</h2>
+                                        <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010p" class="hP">A parent-subsidiary controlled group <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(a)(1)</span><a id="link27" class="link" href="javascript:void(0)" onclick="callCitationLink('link27','IRC-FILE','S1563(a)(1)','','','')">exists when</a></span>:</p>
+                                        <table
+                                            border="0" cellspacing="0" cellpadding="0" width="100%" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010o">
+                                            <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010oi">
+                                                <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(1)</span></td>
+                                                <td style="padding-left:6pt">
+                                                    <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010oip">one or more chains of corporations are connected through stock ownership with a common parent corporation;</p>
+                                                </td>
+                                            </tr>
+                                            <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010oi2">
+                                                <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(2)</span></td>
+                                                <td style="padding-left:6pt">
+                                                    <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010oi2p">80 percent or more of the voting power or value of the stock of each corporation in the group other than the parent is owned by one or more corporations in the group; and</p>
+                                                </td>
+                                            </tr>
+                                            <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010oi3">
+                                                <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(3)</span></td>
+                                                <td style="padding-left:6pt">
+                                                    <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010oi3p">the common parent owns at least 80 percent of the voting power or value of the stock of one of the other corporations in the group (not counting stock owned directly by other <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(a)(2)</span>
+                                                        <a
+                                                            id="link35" class="link" href="javascript:void(0)" onclick="callCitationLink('link35','FEDREG','S1.1563-1(a)(2)','','','')">members of the group). </a>
+                                                            </span>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                </table>
+                <div origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010n" class="hP noteContainer">
+                    <div class="example">Example (1)&nbsp;</div>
+                    <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010np" class="hP noteBody">Corporation A owns 80 percent of Corporation B and 80 percent of corporation C. B and C each own 40 percent of D. A, B, C and D are all members of a <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(a)(2)(ii)</span>
+                        <a
+                            id="link38" class="link" href="javascript:void(0)" onclick="callCitationLink('link38','FEDREG','S1.1563-1(a)(2)(ii)','','','')">parent-subsidiary controlled group</a>
+                            </span>.</p>
+                </div>
+                <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000860690b11c18cbab010p2" class="hP">In determining whether the 80-percent test is met, under the constructive ownership rules, if a person has an option to acquire stock (or an option to acquire an option), this stock <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(e)(1)</span>
+                    <a
+                        id="link40" class="link" href="javascript:void(0)" onclick="callCitationLink('link40','IRC-FILE','S1563(e)(1)','','','')">is considered owned</a>
+                        </span> by that person. Further, the <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(e)(2)</span><a id="link41" class="link" href="javascript:void(0)" onclick="callCitationLink('link41','IRC-FILE','S1563(e)(2)','','','')">partnership</a></span>
+                        and <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(e)(3)</span><a id="link42" class="link" href="javascript:void(0)" onclick="callCitationLink('link42','IRC-FILE','S1563(e)(3)','','','')">trust and estate</a></span>
+                        attribution rules must also be <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-3</span><a id="link43" class="link" href="javascript:void(0)" onclick="callCitationLink('link43','FEDREG','S1.1563-3','','','')">taken into account</a></span>.</p>
+                <a
+                    name="351dbc5e7c571000b6f990b11c18cbab012" id="351dbc5e7c571000b6f990b11c18cbab012"></a>
+                    <h2 origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012h" class="hP docDisplay level-heading" style="">Brother-sister controlled group</h2>
+                    <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012p" class="hP">For purposes of <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1561</span><a id="link47" class="link" href="javascript:void(0)" onclick="callCitationLink('link47','IRC-FILE','S1561','','','')">IRC §1561</a></span>,
+                        a brother-sister controlled group exists if five or fewer persons, who are individuals, trusts, or estates, own more than 50 percent of the total combined voting power, or more than 50 percent of the total value of all shares,
+                        of two or more corporations, considering the stock ownership of each person only to the extent the stock ownership is identical with respect <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(a)(2)</span>
+                        <a
+                            id="link48" class="link" href="javascript:void(0)" onclick="callCitationLink('link48','IRC-FILE','S1563(a)(2)','','','')">to each corporation</a>
+                            </span>. </p>
+                    <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012p2" class="hP">For purposes of other Code provisions other than <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1561</span><a id="link50" class="link" href="javascript:void(0)" onclick="callCitationLink('link50','IRC-FILE','S1561','','','')">IRC §1561</a></span>,
+                        the five or fewer persons <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(f)(5)</span><a id="link51" class="link" href="javascript:void(0)" onclick="callCitationLink('link51','IRC-FILE','S1563(f)(5)','','','')">must own</a></span>:</p>
+                    <table
+                        border="0" cellspacing="0" cellpadding="0" width="100%" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012o">
+                        <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012oi">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(1)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012oip">at least 80 percent of the total combined voting power, or at least 80 percent of the total value, of each corporation; and</p>
+                            </td>
+                        </tr>
+                        <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012oi2">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(2)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012oi2p">must also possess more than 50 percent of the total combined voting power, or more than 50 percent of the total value, of each corporation, taking into account the stock ownership of each person only to the extent the stock
+                                    ownership is identical with respect to each such corporation.</p>
+                            </td>
+                        </tr>
+                        </table>
+                        <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012p3" class="hP">The brother-sister controlled group definition for purposes of the <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1561</span><a id="link58" class="link" href="javascript:void(0)" onclick="callCitationLink('link58','IRC-FILE','S1561','','','')">tax benefit limitation rules</a></span>
+                            excludes the 80-percent ownership test in order to prevent related corporations from circumventing its limitations. The definition of a brother-sister controlled group containing the 80-percent ownership test, however, applies
+                            for purposes of other Code provisions that incorporate or refer to the <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563</span><a id="link59" class="link" href="javascript:void(0)" onclick="callCitationLink('link59','IRC-FILE','S1563','','','')">IRC §1563</a></span>
+                            definition of a brother-sister controlled group.</p>
+                        <div origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012n" class="hP noteContainer">
+                            <div class="example">Example&nbsp;(2)</div>
+                            <table class="noteIndent" id="351dbc5e7c571000a09c90b11c18cbab014" width="800">
+                                <colgroup>
+                                    <col span="1" width="5%">
+                                    <col span="1" width="41%">
+                                    <col span="1" width="5%">
+                                    <col span="1" width="2%">
+                                    <col span="1" width="5%">
+                                    <col span="1" width="5%">
+                                    <col span="1" width="2%">
+                                    <col span="1" width="5%">
+                                    <col span="1" width="5%">
+                                    <col span="1" width="2%">
+                                    <col span="1" width="5%">
+                                    <col span="1" width="8%">
+                                    <col span="1" width="2%">
+                                    <col span="1" width="8%">
+                                </colgroup>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr">
+                                    <td>
+                                        <p class="hP" style="margin-bottom:0px;"><br></p>
+                                    </td>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr2">
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" align="center" colspan="3" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>Identical stock</i></p>
+                                    </th>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr3">
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" colspan="1" rowspan="1" valign="bottom">
+                                        <p class="hP"><span style="{display:none}"></span></p>
+                                    </th>
+                                    <th class="xhtml" align="center" colspan="9" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>Stock ownership in %</i></p>
+                                    </th>
+                                    <th class="xhtml" align="center" colspan="3" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>ownership in</i></p>
+                                    </th>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr4">
+                                    <th class="xhtml" align="left" colspan="2" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>Shareholders</i></p>
+                                    </th>
+                                    <th class="xhtml" align="center" colspan="3" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>Corp. 1</i></p>
+                                    </th>
+                                    <th class="xhtml" align="center" colspan="3" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>Corp. 2</i></p>
+                                    </th>
+                                    <th class="xhtml" align="center" colspan="3" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>Corp. 3</i></p>
+                                    </th>
+                                    <th class="xhtml" align="center" colspan="3" rowspan="1" valign="bottom">
+                                        <p class="hP"><i>%</i></p>
+                                    </th>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr5">
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="left" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">A</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">40</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">26</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">45</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">26</p>
+                                    </td>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr6">
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="left" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">B</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">25</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">40</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">45</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">25</p>
+                                    </td>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr7">
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="left" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">C</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">20</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">30</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">1</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">1</p>
+                                    </td>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr8">
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"></span></td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"></span></td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"></span></td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"></span></td>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr9">
+                                    <td align="left" colspan="2" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">Total (A + B + C)<sup><a class="footnoteRef" name="foottbld4612e251fn317-reference" id="foottbld4612e251fn317-reference" href="javascript:void(0)" onClick="scrollToAnchor('foottbld4612e251fn317')">*</a></sup></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">85</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">96</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">91</p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;">52</p>
+                                    </td>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr10">
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"><hr style="border-color:black;"></span></td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"><hr style="border-color:black;"></span></td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"><hr style="border-color:black;"></span></td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                    <td align="right" valign="bottom"><span><hr style="border-color:black;"><hr style="border-color:black;"></span></td>
+                                </tr>
+                                <tr origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012ntr11">
+                                    <td align="left" colspan="14" valign="bottom">
+                                        <p class="hP" style="margin-bottom:0px;"></p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <table cellpadding="0" cellspacing="0" border="0" class="noteIndent">
+                                <tr>
+                                    <td class="tableNote" align="right" valign="top"><sup><a class="footnoteRef" name="foottbld4612e251fn317" id="foottbld4612e251fn317" href="javascript:void(0)" onClick="scrollToAnchor('foottbld4612e251fn317-reference')"><span class="docHeadSpacer">*</span></a></sup></td>
+                                    <td
+                                        align="left" valign="top">
+                                        <p class="hP footnote" origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012nfootnotesfop">The remaining stock in Corporations 1—3 is owned by unrelated third parties.</p>
+                                        </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012p4" class="hP">In this case, a brother-sister controlled group comprised of Corporations 1, 2, and 3 exists for purposes of <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1561</span><a id="link320" class="link" href="javascript:void(0)"
+                                onclick="callCitationLink('link320','IRC-FILE','S1561','','','')">IRC §1561</a></span>, and other Code provisions referring to a brother-sister controlled group, because both the 80 percent and the 50 percent tests are met.</p>
+                        <div
+                            origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012n2" class="hP noteContainer">
+                            <div class="example">Example&nbsp;(3)</div>
+                            <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c571000b6f990b11c18cbab012n2p" class="hP noteBody">Assume the same facts as in Example (2), above, <i>except</i> that C owns no stock in Corporation 3. In that case, a brother-sister controlled group comprised of Corporations 1, 2, and 3 exists only for purposes of <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1561</span>
+                                <a
+                                    id="link324" class="link" href="javascript:void(0)" onclick="callCitationLink('link324','IRC-FILE','S1561','','','')">IRC §1561</a>
+                                    </span> because only the 50-percent <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(a)(2)</span><a id="link325" class="link" href="javascript:void(0)" onclick="callCitationLink('link325','IRC-FILE','S1563(a)(2)','','','')">ownership test</a></span>
+                                    is met. However, a brother-sister controlled group still exists for purposes of other Code provisions under <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(f)(5)</span><a id="link326" class="link"
+                                        href="javascript:void(0)" onclick="callCitationLink('link326','IRC-FILE','S1563(f)(5)','','','')">IRC §1563(f)(5)</a></span>, but it is limited to just Corporations 1 and 2 because both the 50-percent and 80-percent
+                                    tests are met only with respect to these two corporations. Since C owns no stock in Corporation 3, Corporation 3 is not a component of that group, even though A and B together own 90 percent of the stock <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(a)(3)</span>
+                                    <a
+                                        id="link327" class="link" href="javascript:void(0)" onclick="callCitationLink('link327','FEDREG','S1.1563-1(a)(3)','','','')">in Corporation 3</a>
+                                        </span>.</p>
+                            </div>
+                            <a name="351dbc5e7c57100086c190b11c18cbab016" id="351dbc5e7c57100086c190b11c18cbab016"></a>
+                            <h2 origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100086c190b11c18cbab016h" class="hP docDisplay level-heading" style="">Election</h2>
+                            <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100086c190b11c18cbab016p" class="hP">A corporation will not be treated as a member of more than one brother-sister groups. The corporation may elect the group in which it wishes to be included by filing a statement to that effect on or before the due date (including
+                                extensions) for the filing of its income tax return. The statement must provide a description of each of the controlled groups of which the corporation could be a member, including the name, employer identification number
+                                and stock ownership of each component member of each group. The corporation must designate in the statement the controlled group in which the corporation elects to <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(c)(2)(i)</span>
+                                <a
+                                    id="link331" class="link" href="javascript:void(0)" onclick="callCitationLink('link331','FEDREG','S1.1563-1(c)(2)(i)','','','')">be a member</a>
+                                    </span>.</p>
+                            <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100086c190b11c18cbab016p2" class="hP">If more than one corporation could be a component member of more than one controlled group, those corporations that elect to be members of the same controlled group must file a single statement. The original statement must
+                                be filed with the original tax return (including any amended return filed on or before the due date (including extensions) of the return) of the corporation that has the tax year including the December 31 which ends on
+                                the earliest date. That corporation must provide a copy of the statement to each other corporation included in the statement and must make a representation in its statement that it has done so. Each corporation must retain
+                                either the original or a copy of the statement <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(c)(2)(ii)</span><a id="link333" class="link" href="javascript:void(0)" onclick="callCitationLink('link333','FEDREG','S1.1563-1(c)(2)(ii)','','','')">for its records</a></span>.</p>
+                            <p
+                                origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100086c190b11c18cbab016p3" class="hP">The election is irrevocable and effective until a change in the stock ownership of the corporation results in a termination of its membership in the controlled group in which the corporation has been included. If an election
+                                is not filed, the IRS determines the group in which the corporation is to be included. The IRS's determination is binding for all subsequent years unless the corporation files a valid election or until a change in the stock
+                                ownership of the corporation results in a termination of its membership <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.1563-1(c)(2)(iii)</span><a id="link335" class="link" href="javascript:void(0)"
+                                    onclick="callCitationLink('link335','FEDREG','S1.1563-1(c)(2)(iii)','','','')">in the controlled group</a></span>.</p>
+                                <a name="351dbc5e7c57100091ef90b11c18cbab017" id="351dbc5e7c57100091ef90b11c18cbab017"></a>
+                                <h2 origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100091ef90b11c18cbab017h" class="hP docDisplay level-heading" style="">Combined groups</h2>
+                                <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100091ef90b11c18cbab017p" class="hP">Combinations of brother-sister and parent-subsidiary controlled groups are possible. The combination would be treated as one controlled group. There must, however, be at least three corporations, and at least one of the
+                                    corporations must be a common parent in a parent-subsidiary controlled group and part of a <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(a)(3)</span><a id="link339" class="link" href="javascript:void(0)"
+                                        onclick="callCitationLink('link339','IRC-FILE','S1563(a)(3)','','','')">brother-sister controlled group</a></span>.</p>
+                                <div origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100091ef90b11c18cbab017n"
+                                    class="hP noteContainer">
+                                    <div class="example">Example&nbsp;(4)</div>
+                                    <p origin-xpath="dl$351dbc5e7c571000a2c390b11c18cbab0fdoc-level-bodyl$351dbc5e7c57100091ef90b11c18cbab017np" class="hP noteBody">A single individual owns 80 percent of Corporations D and E. This would be a brother-sister controlled group under both <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(a)(2)</span><a id="link342"
+                                            class="link" href="javascript:void(0)" onclick="callCitationLink('link342','IRC-FILE','S1563(a)(2)','','','')">IRC §1563(a)(2)</a></span> and <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §1563(f)(5)</span>
+                                        <a
+                                            id="link343" class="link" href="javascript:void(0)" onclick="callCitationLink('link343','IRC-FILE','S1563(f)(5)','','','')">1563(f)(5)</a>
+                                            </span>. However, if that individual also owned the stock of Corporation A in Example (1), above, A, B, C, D, and E would all be treated as members of a controlled group of corporations.</p>
+                                </div>
+                                </td>
+                                </tr>
+                                </table>
+                                </div>
+                                <div>
+                                    <div style="padding-top:10px;"><a id="document_backToTop" href="javascript:void(0)" onclick="window.scrollTo(0,0);">Back to Top</a></div>
+                                    <div style="width:100%;"><span style="float:right; padding-right:25px;"><a id="showLink" href="javascript:toggleMetadata();" class="metadataLink"><span id="show" class="ui">Show Metadata</span><span id="hide" class="ui" style="display:none">Hide Metadata</span></a>
+                                        </span>
+                                    </div>
+                                    <div id="metadata" style="display:none;">
+                                        <h1 class="metadata">METADATA</h1>
+                                        <table class="metadata">
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_title">title</td>
+                                                <td class="metadatavalue" id="metadata_title_value">What is a Controlled Group of Corporations?</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_search-title">search-title</td>
+                                                <td class="metadatavalue" id="metadata_search-title_value"><b>Explanation</b>: Code Explanations, What is a Controlled Group of Corporations?</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_primary-class">primary-class</td>
+                                                <td class="metadatavalue" id="metadata_primary-class_value">explanation/explanation</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_industry">Industry</td>
+                                                <td class="metadatavalue" id="metadata_industry_value"></td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_wk-da_number">wk-da number</td>
+                                                <td class="metadatavalue" id="metadata_wk-da_number_value">WKUS_TAL_11713</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_CCH_PubVol">CCH PubVol</td>
+                                                <td class="metadatavalue" id="metadata_CCH_PubVol_value">arp10</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_wk-doc-id">wk-doc-id</td>
+                                                <td class="metadatavalue" id="metadata_wk-doc-id_value">arp10351dbc5e7c571000b31290b11c18cbab0d</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_language">language</td>
+                                                <td class="metadatavalue" id="metadata_language_value">http://psi.oasis-open.org/iso/639/#eng</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_region">region</td>
+                                                <td class="metadatavalue" id="metadata_region_value"><span>United States [http://wk-us.com/meta/regions/#US]</span></td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_publisher">publisher</td>
+                                                <td class="metadatavalue" id="metadata_publisher_value">http://wk-us.com/meta/publishers/#CCH</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_normalized_link">Normalized Link Values</td>
+                                                <td class="metadatavalue" id="metadata_normalized_link_value">P1563(a)</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_publishing-status">publishing-status</td>
+                                                <td class="metadatavalue" id="metadata_publishing-status_value">new</td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_publishing-dates">publishing-dates</td>
+                                                <td class="metadatavalue" id="metadata_publishing-dates_value">available-date: <br>modified-date: <br>revised-date: <br></td>
+                                            </tr>
+                                            <tr class="metadata">
+                                                <td class="metadatahead" valign="top" id="metadata_document-transformation-history">document-transformation-history</td>
+                                                <td class="metadatavalue" id="metadata_document-transformation-history_value">SOURCE-CRC: 2418673670<br>G2I-VERSION: Group2Interchange-RELEASE-05-07-0009<br>G2I-TRANSFORMATION-DATE: 2016-01-20<br>I2A-VERSION: JI2A-R7-00-01-08-0006<br>I2A-TRANSFORMATION-DATE: 2016-01-21<br></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    <p>
+                                        <script language="javascript" type="text/javascript">
+                                            if (setCloseButtonInNewWindow && setCloseButtonInNewWindow()) {
+                                                document.write('<a id="closeWindow" href="javascript:void(0)" onClick="top.close()">Close window</a>');
+                                            }
+                                        </script>
+                                    </p>
+                                </div>
+                                <div class="footer" id="docCopyrightInfo">
+                                    <script language="javascript" type="text/javascript">
+                                        setCopyrightInfo();
+                                    </script>
+                                </div>
+                                <div id="printDocumentFragmentBtn" style="display: none; position: absolute;" onClick="printDocumentFragment()"><img src="../resources/images/printDocumentFragmentIcon.gif" alt="Print selected text"></div>
+                                </div>
+            </div>
+            </td>
+            </tr>
+            </table>
+        </div>
+    </div>
+    <div class="accmenu" style="display: none;">
+        <div class="option addnote" style="display: none">
+            <div class="labelwrapper"><span class="label"></span></div>
+            <div class="replaceByColorPicker"></div>
+        </div>
+        <div class="option addhl" style="display: none">
+            <div class="labelwrapper"><span class="label"></span></div>
+            <div class="replaceByColorPicker"></div>
+        </div>
+        <div class="option printfragment">
+            <div class="img"></div>
+            <div class="labelwrapper"><span class="label"></span></div>
+        </div>
+    </div>
+    <div id="colorPickerTemplate" class="pe_colorpicker">
+        <div class="left">
+            <div class="right">
+                <div class="middle"><a class="pe_colorboxwrapper selected"><span></span></a>
+                    <a class="pe_opener opened"></a><span class="pe_coloroptions"><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="metricsTemplate" class="metrics" style="display: none"><span class="dateCreated"></span><br><span class="author"></span>
+        <p class="modified"><span class="lastModified"></span><span class="dateModified"></span></p>
+    </div>
+    <div id="sideBoxTemplate" class="sideBox" style="display: none">
+        <div class="readMode">
+            <div class="replaceByColorPicker"></div>
+            <a class="deleteBtn"></a>
+            <a class="editBtn"></a>
+            <div class="replaceByMetrics"></div>
+            <div class="warningText" style="display: none"><span class="text"></span></div>
+            <div class="noteText"></div>
+        </div>
+        <div class="editMode">
+            <div class="editBox">
+                <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+            <div class="footerStrip">
+                <a class="cancelBtn"></a>
+                <a class="saveBtn"></a>
+            </div>
+        </div>
+    </div>
+    <div id="topBoxTemplate" class="topBox" style="display: none">
+        <div class="readMode">
+            <a class="deleteBtn"></a>
+            <a class="editBtn"></a>
+            <div class="replaceByMetrics"></div>
+            <div class="warningText" style="display: none"><span class="text"></span>
+                <a class="action"></a>
+            </div>
+            <div class="noteText"></div>
+        </div>
+        <div class="editMode">
+            <div class="editBox">
+                <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+            <div class="footerStrip">
+                <a class="cancelBtn"></a>
+                <a class="saveBtn"></a>
+            </div>
+        </div>
+    </div>
+    <div id="overlayTemplate" class="overlay" style="display: none">
+        <div class="overlay-inner">
+            <div class="editMode">
+                <div class="editBox">
+                    <a class="closeBtn"></a>
+                    <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+                <div class="footerStrip">
+                    <a class="cancelBtn"></a>
+                    <a class="saveBtn"></a>
+                    <a class="deleteBtn"></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html></textarea>
+    </div>
+    <div class="panel">
+      <div class="fileName">File name: arp10351dbc5e7c571000b31290b11c18cbab0d.html</div>
+      <nav class="navPanel"><a href="diff_arp1032a339b87c57100094b090b11c18cbab09.html">&#10094;previous</a><a href="diff_arp106d1221227c571000821d90b11c18c902020.html">next&#x276F;</a>
+      </nav>
+      <div class="backToList"><a href="../index.html">List of files</a></div>
+    </div>
+    <div class="viewType">
+      <div class="sidebyside">
+        <input type="radio" name="_viewtype" checked="checked" onclick="diffUsingJS(0);">
+        <label for="sidebyside">Side by Side Diff</label>
+      </div>
+      <div class="sidebyside">
+        <input id="inline" type="radio" name="_viewtype" onclick="diffUsingJS(1);">
+        <label for="inline">Inline Diff</label>
+      </div>
+    </div>
+    <div id="diffoutput"></div>
+  </body>
+  <script>diffUsingJS(0);</script>
+</html>

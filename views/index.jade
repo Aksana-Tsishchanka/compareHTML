@@ -9,7 +9,8 @@ html
     div.container
       h1 List of files
       div.listFiles
-        h3 Click to see differences in files
-        each item in fileNameList
-          div
-            a(href="diffTool/diff_#{item}")=item
+        h4 Click to see differences in files
+        ul
+          each item in fileNameList
+            li
+             a(href="diffTool/diff_#{item}")=item

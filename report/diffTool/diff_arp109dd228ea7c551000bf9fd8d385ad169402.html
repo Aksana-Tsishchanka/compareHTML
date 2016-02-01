@@ -1,0 +1,1739 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <title>jsdifflib demo</title>
+    <link rel="stylesheet" type="text/css" href="css/diffview.css">
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <script type="text/javascript" src="js/diffview.js"></script>
+    <script type="text/javascript" src="js/difflib.js"></script>
+    <script type="text/javascript" src="js/diffrun.js"></script>
+  </head>
+  <body>
+    <h1 class="top"></h1>
+    <div class="top"><strong>Context size (optional):</strong>
+      <input id="contextSize" type="text" value="">
+    </div>
+    <div class="textInput">
+      <h2>Base Text</h2>
+      <textarea id="baseText"><!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:i18n="http://apache.org/cocoon/i18n/2.1" xmlns:configuration-reader="java:com.wolterskluwer.atlas.mantle.dps.cocoon.extension.ConfigurationReader">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/docDisplay.css?v=7">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/annotation.css?v=13">
+    <script src="../resources/js/format-document-fragment.js?v=2" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        var documentContext = {
+            enableNotesRendering: true,
+            enableHLRendering: true,
+            rfID: "-1",
+            showAnnotationsByDefault: false,
+            annotationDisplayMode: "SIDE_NOTES",
+            annotationAccelerator: false,
+            filterByProductId: true,
+            locale: "en",
+            annoId: "-1",
+            scroll: "false",
+            showSelected: "false"
+        };
+    </script>
+    <script src="../resources/js/logging.js?v=3" type="text/javascript"></script>
+    <script src="../resources/js/jquery.1.7.2.min.js?v=1" type="text/javascript"></script>
+    <script src="../resources/js/rangy-core.js?v=3" type="text/javascript"></script>
+    <script src="../resources/js/core.js?v=20" type="text/javascript"></script>
+    <script src="../resources/js/accelerator.js?v=8" type="text/javascript"></script>
+    <script src="../resources/js/print-fragment.js?v=4" type="text/javascript"></script>
+    <script src="../resources/js/annotation.js?v=41" type="text/javascript"></script>
+    <script src="../resources/js/annotation-widgets.js?v=18" type="text/javascript"></script>
+    <script src="../resources/js/annotation-iface.js?v=11" type="text/javascript"></script>
+    <script src="../resources/js/common.js?v=9" type="text/javascript"></script>
+    <script src="../resources/js/scion.js?v=15" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        wk.i18n.setText("pf_option_label", "Print selected text");
+        wk.i18n.setText("pf_option_title", "Print selected text");
+
+        wk.i18n.setText("color_title_TRANSPARENT", "Transparent");
+        wk.i18n.setText("color_title_YELLOW", "Yellow");
+        wk.i18n.setText("color_title_PINK", "Pink");
+        wk.i18n.setText("color_title_ORANGE", "Orange");
+        wk.i18n.setText("color_title_GREEN", "Green");
+        wk.i18n.setText("color_title_BLUE", "Blue");
+        wk.i18n.setText("add_note_option_label", "Add Note");
+        wk.i18n.setText("add_note_option_title", "Add Note for highlight");
+        wk.i18n.setText("hl_option_label", "Highlight text");
+        wk.i18n.setText("hl_option_title", "Highlight selected text");
+        wk.i18n.setText("note_handle_prompt", "Enter note here...");
+        wk.i18n.setText("note_handle_created", "Created");
+        wk.i18n.setText("note_handle_updated", "Last Modified:");
+        wk.i18n.setText("note_handle_add_note_btn_text", "Add Note");
+        wk.i18n.setText("note_handle_add_note_btn_title", "Adds note to this highlight");
+        wk.i18n.setText("note_handle_edit_btn_text", "Edit");
+        wk.i18n.setText("note_handle_edit_btn_title", "Edit");
+        wk.i18n.setText("note_handle_delete_btn_text", "Delete");
+        wk.i18n.setText("note_handle_delete_btn_title", "Delete");
+        wk.i18n.setText("note_handle_close_btn_text", "X");
+        wk.i18n.setText("note_handle_close_btn_title", "Close");
+        wk.i18n.setText("note_handle_save_btn_text", "Save");
+        wk.i18n.setText("note_handle_save_btn_title", "Save");
+        wk.i18n.setText("note_handle_cancel_btn_text", "Cancel");
+        wk.i18n.setText("note_handle_cancel_btn_title", "Cancel");
+        wk.i18n.setText("note_handle_view_in_host_msg", "View your previously highlighted passage on the Document Notes tab");
+        wk.i18n.setText("note_handle_no_user_name", "No user name");
+        wk.i18n.setText("note_author_disabled_suffix", "(disabled)");
+        wk.i18n.setText("note_author_deleted", "unknown user (deleted)");
+    </script>
+    <script src="../resources/js/cautionNoteTip.js?v=1" type="text/javascript"></script>
+    <script src="../resources/js/tooltip.js" type="text/javascript"></script>
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" onload="doOnDocumentLoaded()">
+    <div class="touchable">
+        <div id="dps-resource" class="dps-resource">
+            <div id="arp109dd228ea7c551000bf9fd8d385ad169402" tocleafnodewkdocid="WKUS_TAL_11713#teid-773" cshleafnodewkdocid="WKUS-TAL-DOCS-PHC-{c1a56e6a-6770-41f0-baa7-744fab3444e1}" class="docInFocus">
+                <table xmlns:cinclude="http://apache.org/cocoon/include/1.0" xmlns:xsp="http://apache.org/xsp" xmlns:xsp-request="http://apache.org/xsp/request/2.0" xmlns:dps="tbd/dps" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
+                    cellpadding="0" cellspacing="0" class="anBase annoRight editorView">
+                    <tr>
+                        <td colspan="3">
+                            <div class="topContainer">
+                                <div class="topContainer-inner"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="anCol1" rowspan="2"></td>
+                        <td></td>
+                        <td class="anCol3" rowspan="2">
+                            <div class="sideContainer">
+                                <div class="sideContainer-inner"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="anCol2">
+                            <div class="docContent">
+                                <div class="content-wrap super-class-explanation">
+                                    <div id="documentContent" origin-xpath="d" wk-doc-id="arp109dd228ea7c551000bf9fd8d385ad169402">
+                                        <div style="padding-bottom:5px;">
+                                            <a href="javascript:void(0)" id="RFIndicator_arp109dd228ea7c551000bf9fd8d385ad169402" onclick="openResearchFolder('arp109dd228ea7c551000bf9fd8d385ad169402')" alt="Open Research Folder" title="Open Research Folder"
+                                                class=""></a>
+                                        </div>
+                                        <h1 class="docDisplay" id="docTitle" origin-xpath="dh">Code Explanations<span class="docHeadSpacer">,</span>§213, Medical Expense Deduction</h1>
+                                        <p xmlns:dps="tbd/dps">
+                                            <p>
+                                                <div origin-xpath="dri" origin-id="ri1" id="ri1" class="relBtnContainer">
+                                                    <div class="relBtn firstRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_internal_revenue_code_button" title="IRC" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','internal_revenue_code_button','IRC')"><a id="relationships1_internal_revenue_code_button_link" href="javascript:void(0)" class="relBtnLink atomHL">IRC</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_committee_report_button" title="Committee Reports" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','committee_report_button','Committee Reports')"><a id="relationships1_committee_report_button_link" href="javascript:void(0)" class="relBtnLink atomHL">Committee Reports</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_regulations_button" title="Regulations" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','regulations_button','Regulations')"><a id="relationships1_regulations_button_link" href="javascript:void(0)" class="relBtnLink atomHL">Regulations</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_explanations_button" title="CCH Explanations" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','explanations_button','CCH Explanations')"><a id="relationships1_explanations_button_link" href="javascript:void(0)" class="relBtnLink atomHL">CCH Explanations</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_annotations_button" title="Annotations" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','annotations_button','Annotations')"><a id="relationships1_annotations_button_link" href="javascript:void(0)" class="relBtnLink atomHL">Annotations</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_forms_button" title="Forms" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','forms_button','Forms')"><a id="relationships1_forms_button_link" href="javascript:void(0)" class="relBtnLink atomHL">Forms</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_related_form_button" title="Form" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','related_form_button','Form')"><a id="relationships1_related_form_button_link" href="javascript:void(0)" class="relBtnLink atomHL">Form</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_related_tool" title="Tools" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','related_tool','Tools')"><a id="relationships1_related_tool_link" href="javascript:void(0)" class="relBtnLink atomHL">Tools</a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </p>
+                                        </p>
+                                        <a name="9dd228ea7c5510008611d8d385ad169404" id="9dd228ea7c5510008611d8d385ad169404"></a>
+                                        <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyp" class="hP">Individuals can deduct the amount of unreimbursed <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §213(a)</span><a id="link6" class="link" href="javascript:void(0)" onclick="callCitationLink('link6','IRC-FILE','S213(a)','','','')">medical expenses</a></span>
+                                            that exceeds a threshold percentage of their adjusted gross income (AGI). In order to qualify for the deduction, the expenses must be paid for medical care, which includes payments for medical or dental services,
+                                            prescribed medicine and drugs, insulin, medical equipment and supplies, medical insurance premiums, transportation needed to get medical care, and many other medical-related expenses.</p>
+                                        <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyp2"
+                                            class="hP">The medical expense deduction is an itemized deduction and is reported on Schedule A (Form 1040), Itemized Deductions. Neither Form 1040A nor Form 1040EZ can be used to claim a medical expense deduction. </p>
+                                        <p
+                                            origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyp3" class="hP"><i>Deduction requirements.</i> Individuals can claim a <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §213(a)</span><a id="link10" class="link" href="javascript:void(0)" onclick="callCitationLink('link10','IRC-FILE','S213(a)','','','')">deduction for medical expenses</a></span>:</p>
+                                            <table
+                                                border="0" cellspacing="0" cellpadding="0" width="100%" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo">
+                                                <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyoi">
+                                                    <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(1)</span></td>
+                                                    <td style="padding-left:6pt">
+                                                        <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyoip">That are paid during the tax year and are not compensated for by insurance or otherwise;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyoi2">
+                                                    <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(2)</span></td>
+                                                    <td style="padding-left:6pt">
+                                                        <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyoi2p">That are for the medical care of the individual, the individual’s spouse, or the individual’s qualifying dependent; and</p>
+                                                    </td>
+                                                </tr>
+                                                <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyoi3">
+                                                    <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(3)</span></td>
+                                                    <td style="padding-left:6pt">
+                                                        <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyoi3p">To the extent that the expenses exceed 10 percent of adjusted gross income (AGI).</p>
+                                                    </td>
+                                                </tr>
+                </table>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyp4" class="hP">Senior citizens can claim a medical expense deduction to the extent that their qualifying expenses exceed 7.5 percent of AGI. The 7.5-percent AGI threshold for senior citizens is temporary and only applies for tax years ending before 2017.
+                    For tax years beginning in 2011 and 2012, the percentage of AGI threshold was 7.5 percent for all individuals, no matter what their age. </p>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyp5" class="hP">There are a few exceptions to the rule that medical expenses are deductible in the year paid.</p>
+                <table border="0" cellspacing="0" cellpadding="0" width="100%" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo2">
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo2i">
+                        <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(1)</span></td>
+                        <td style="padding-left:6pt">
+                            <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo2ip">An individual may deduct qualified premiums paid for future medical care to be provided after the individual reaches the age of 65. </p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo2i2">
+                        <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(2)</span></td>
+                        <td style="padding-left:6pt">
+                            <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo2i2p">Certain prepayments for lifetime institutional care are deductible.</p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo2i3">
+                        <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(3)</span></td>
+                        <td style="padding-left:6pt">
+                            <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo2i3p">The medical expenses of a decedent paid by the decedent's estate within one year of the decedent's death can be treated as paid by the decedent in the year the expenses were incurred.</p>
+                        </td>
+                    </tr>
+                </table>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyp6" class="hP"><i>Recordkeeping.</i> Individuals need to keep <a xmlns:dps="tbd/dps" class="link" alt="Form" onclick="handleAppLink('[{cc|BaseUrl.TAATools|http://tax.cchgroup.com}]/WKRedirect/WKRedirect.aspx?prod=PPIII&amp;DI=[{cc|session.auth.ticket}]&amp;U=[{cc|session.user.id}]&amp;NormVal=NON:%20WKFORM%20|P|P0005196%20ARP10&amp;endPtLinkHere=1&amp;class=PracticeTool&amp;caption=Form','Form','arp109dd228ea7c551000bf9fd8d385ad169402')"
+                        href="javascript:void(0)">records</a> of their medical and dental expenses, but they do not need to submit them with their return in order to claim the medical expense deduction. Individuals claiming medical expense deductions should
+                    be prepared to provide the name and address of each person who received payment for medical expenses and the amount and date of payment.</p>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyp7" class="hP">Medical expense deductions must be substantiated by <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.213-1(h)</span><a id="link31" class="link" href="javascript:void(0)" onclick="callCitationLink('link31','FEDREG','S1.213-1(h)','','','')">statements or itemized invoices</a></span>
+                    from the doctor, hospital, pharmacy or other person or entity who was paid for the medical service. The statement or invoice should show: </p>
+                <ul origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyu" class="bull">
+                    <li class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyui">
+                        <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyuip">the nature of the service provided and the person who received the service ;</p>
+                    </li>
+                    <li class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyui2">
+                        <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyui2p">the nature of any other item of expense and for whom the expense was incurred, for what specific purpose the expense was incurred, the amount that was paid, and the date of payment; and </p>
+                    </li>
+                    <li class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyui3">
+                        <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyui3p">any other relevant information.</p>
+                    </li>
+                </ul>
+                <a name="9dd228ea7c551000a7f6d8d385ad169405" id="9dd228ea7c551000a7f6d8d385ad169405"></a>
+                <h2 origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405h" class="hP docDisplay level-heading" style="">Common Examples of Deductible and Nondeductible Medical Expenses</h2>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405p" class="hP">In order to be eligible for the medical expense deduction, the individual’s expenses must be paid for medical care, which includes payments for medical or dental services, prescribed medicine and drugs, insulin, medical equipment and supplies,
+                    medical insurance premiums, transportation needed to get medical care, and many other medical-related expenses. Although capital expenditures are generally not deductible, if the purpose of a capital expenditure is for the medical
+                    care of an individual or the individual’s spouse or dependents, it can be deductible. </p>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405p2" class="hP">The key issue for the medical expense deduction is what expenses are considered to be paid for medical care. <span class="quote">"<span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §213(d)(1)</span><a id="link44" class="link"
+                        href="javascript:void(0)" onclick="callCitationLink('link44','IRC-FILE','S213(d)(1)','','','')">Medical care</a></span>"</span> is defined as amounts paid for the diagnosis, cure, mitigation, treatment, or prevention of disease, or
+                    for the purpose of affecting any structure or function of the body. Medical care also includes amounts paid for transportation to get medical care, premiums paid for insurance that covers the cost of medical care, amounts paid for
+                    long-term care services, and limited amounts of premiums paid for a qualified long-term care insurance contract. In addition, a limited amount of <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §213(d)(2)</span>
+                    <a
+                        id="link45" class="link" href="javascript:void(0)" onclick="callCitationLink('link45','IRC-FILE','S213(d)(2)','','','')">lodging costs</a>
+                        </span> that are necessary for medical care may qualify as medical care expenses.</p>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405p3" class="hP">The following chart provides some common examples of deductible and nondeductible medical expenses. For a detailed description and checklist of deductible and nondeductible medical expenses, see <span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(d)-child1</span>
+                    <a
+                        id="link47" class="link" href="javascript:void(0)" onclick="callCitationLink('link47','ARP-ALL','P213(d)-child1','','','')">Explanation: §213(d)</a>
+                        </span>. </p>
+                <table class="xhtml" cellspacing="8" cellpadding="0" border="0" id="9dd228ea7c551000ba80d8d385ad169406" width="750">
+                    <colgroup>
+                        <col span="1" width="48%">
+                        <col span="1" width="2%">
+                        <col span="1" width="48%">
+                        <col span="1" width="2%">
+                    </colgroup>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr">
+                        <th class="xhtml" align="center" colspan="1" rowspan="1" valign="bottom">
+                            <p class="hP">Examples of Deductible Medical Expenses—Amounts Paid for:</p>
+                        </th>
+                        <td valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <th class="xhtml" align="center" colspan="2" rowspan="1" valign="bottom">
+                            <p class="hP">Examples of Nondeductible Medical Expenses—Amounts Paid for:</p>
+                        </th>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr2">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Acupuncture</p>
+                        </td>
+                        <td valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Babysitting and child care services</p>
+                        </td>
+                        <td valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr3">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Ambulance service</p>
+                        </td>
+                        <td valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Cosmetic surgery (unnecessary)</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr4">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Bandages and medical supplies</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Funeral expenses</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr5">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Birth control pills</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Health club dues</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr6">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Breast pumps and lactation supplies</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Health savings accounts</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr7">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Chiropractor services</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Household help</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr8">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Dental treatment</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Illegal operations and treatments</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr9">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Eye exams, eyeglasses and contact lenses</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Maternity clothes</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr10">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Hearing aids</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Medical savings accounts</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr11">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Home improvements if the main purpose is medical care (restrictions apply)
+                            </p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Prescribed drugs from another country (unless imported legally)</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr12">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Lab fees</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Medicines and drugs, nonprescribed (over-the-counter)</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr13">
+                        <td align="left" valign="top">
+                            <p class="hP" style="margin-bottom:0px;">Medical insurance premiums (restrictions apply)</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="top">
+                            <p class="hP" style="margin-bottom:0px;">Nutritional supplements for general health, such as vitamins and herbal supplements</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr14">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Medicines and drugs, prescribed</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Toothbrush and toothpaste</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr15">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Physical exams</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Teeth whitening</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr16">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Psychiatric care</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Weight-loss program (for general weight loss)</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr17">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Stop-smoking program</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr18">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Surgery (unnecessary cosmetic surgery not deductible)</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr19">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Transportation for medical care</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr20">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Vasectomy</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr21">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Weight-loss program (for treatment of specific disease diagnosed by doctor)</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr22">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Wheelchairs</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr23">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">X-rays</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr24">
+                        <td>
+                            <p class="hP" style="margin-bottom:0px;"><br></p>
+                        </td>
+                    </tr>
+                </table>
+                <a name="9dd228ea7c55100088c0d8d385ad169407" id="9dd228ea7c55100088c0d8d385ad169407"></a>
+                <h2 origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407h" class="hP docDisplay level-heading" style="">Reporting Medical Expense Deduction on Schedule A (Form 1040),
+Itemized Deductions</h2>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407p" class="hP">The medical expense deduction is reported on Lines 1 through 4 of Schedule A (Form 1040), Itemized Deductions (2014). Medical expenses after reductions for reimbursements are reported on Line 1. The taxpayer's AGI is reported on Line 2.
+                    The AGI limitation is computed on Line 3 by multiplying the taxpayer's AGI from Line 2 by 10 percent (or 7.5 percent for those born before January 2, 1950, e.g., 65 or over in 2014). The taxpayer's medical expense deduction for the
+                    tax year is the amount computed on Line 4, which is equal to the medical expenses from Line 1 less the AGI limitation from Line 3.</p>
+                <div origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407n"
+                    class="hP noteContainer">
+                    <div class="example">Example&nbsp;</div>
+                    <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407np" class="hP noteBody">Peter and Ellen, who are both under 65 years old in 2014, file as married jointly. For the year, they have an adjusted gross income of $60,000. Their reportable medical expenses for the year (as detailed below) are $9,300. Their unusually
+                        high medical expenses for the year were in part attributable to a back injury that Peter, an aspiring tennis pro, suffered while playing in a tennis match. Their qualifying medical expenses are follows:</p>
+                    <table border="0" cellspacing="0"
+                        cellpadding="0" width="100%" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407no">
+                        <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(1)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noip">$4,240 in doctor bills and $200 in prescribed medicine and drugs for Ellen's mother, who is a dependent;</p>
+                            </td>
+                        </tr>
+                        <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi2">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(2)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi2p">$400 in prescribed medicine and drugs for Peter's back injury;</p>
+                            </td>
+                        </tr>
+                        <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi3">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(3)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi3p">$900 was paid for the combined family medical and dental insurance; </p>
+                            </td>
+                        </tr>
+                        <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi4">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(4)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi4p">$3,400, representing Peter's total hospital and doctor bills for his injury of $5,900, less $2,500 that was reimbursed by his insurance company;</p>
+                            </td>
+                        </tr>
+                        <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi5">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(5)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi5p">the $45 expense of transporting Peter to and from the hospital and the doctor's office; and</p>
+                            </td>
+                        </tr>
+                        <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi6">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(6)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi6p">the $115 cost of new eyeglasses for Ellen.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407np2" class="hP noteBody">Peter and Ellen report $9,300 in medical expenses in 2014 ($4,240 + $200 + $400 + $900 + $3,400 + $45 + $115). This amount is amount is reduced by $6,000 (10 percent of their adjusted gross income of $60,000), resulting in $3,300 in
+                        medical deductions to be reported as itemized deductions. In addition, Peter and Ellen paid $5,600 in real estate taxes, $7,200 in mortgage interest expense, and made $1,700 in charitable donations, for total itemized deductions
+                        of $17,800. This amount is transferred to Line 40 of Form 1040.</p>
+                    <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407np3" class="hP noteBody"><span style="margin-left:15px"><a target="_blank" href="atlas-doc-attach/attachment.pdf?src=file:///apps/WEBS/docs/attach/WKUS-TAL-DOCS-PHC/TPP_1040_2014_35095.05_A.pdf&amp;documentTitle=TPP_1040_2014_35095.pdf&amp;AtlasTicket=404180D6-714C-438F-B140-817582E592BC" onclick="logExternalLink('TPP_1040_2014_35095.05_A.pdf','/docmedia/attach/WKUS-TAL-DOCS-PHC/TPP_1040_2014_35095.05_A.pdf')" alt="Click to Launch Filled-in Form: Schedule A (Form 1040)" title="Click to Launch Filled-in Form: Schedule A (Form 1040)">Click to Launch Filled-in Form: Schedule A (Form 1040)</a></span></p>
+                </div>
+                <a name="9dd228ea7c551000ac8cd8d385ad169409" id="9dd228ea7c551000ac8cd8d385ad169409"></a>
+                <h2 origin-xpath="dl$9dd228ea7c551000ac8cd8d385ad169409h" class="hP docDisplay level-heading" style="">Medical Expense Deduction Requirements</h2>
+                <a name="9dd228ea7c551000b75ad8d385ad16940a" id="9dd228ea7c551000b75ad8d385ad16940a"></a>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr style="padding-bottom:10px">
+                        <td valign="top" style="padding-right:8px;white-space:nowrap;">
+                            <p class="hP"></p>
+                        </td>
+                        <td valign="top">
+                            <p origin-xpath="dl$9dd228ea7c551000ac8cd8d385ad169409l$9dd228ea7c551000b75ad8d385ad16940adoc-level-bodyp" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(a)</span><a id="link297" class="link" href="javascript:void(0)" onclick="callCitationLink('link297','ARP-ALL','P213(a)','','','')">What Medical Expenses Can a Taxpayer Deduct?</a></span>
+                            </p>
+                            <p origin-xpath="dl$9dd228ea7c551000ac8cd8d385ad169409l$9dd228ea7c551000b75ad8d385ad16940adoc-level-bodyp2" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(a)-child1</span><a id="link299" class="link" href="javascript:void(0)" onclick="callCitationLink('link299','ARP-ALL','P213(a)-child1','','','')">Payments and Reimbursements of Medical Expenses</a></span>
+                            </p>
+                            <p origin-xpath="dl$9dd228ea7c551000ac8cd8d385ad169409l$9dd228ea7c551000b75ad8d385ad16940adoc-level-bodyp3" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(a)-child2</span><a id="link301" class="link" href="javascript:void(0)" onclick="callCitationLink('link301','ARP-ALL','P213(a)-child2','','','')">Individuals Who Qualify for the Deduction</a></span>
+                            </p>
+                            <p origin-xpath="dl$9dd228ea7c551000ac8cd8d385ad169409l$9dd228ea7c551000b75ad8d385ad16940adoc-level-bodyp4" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(a)-child3</span><a id="link303" class="link" href="javascript:void(0)" onclick="callCitationLink('link303','ARP-ALL','P213(a)-child3','','','')">Applying AGI Threshold to Determine Deduction</a></span>
+                            </p>
+                            <p origin-xpath="dl$9dd228ea7c551000ac8cd8d385ad169409l$9dd228ea7c551000b75ad8d385ad16940adoc-level-bodyp5" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(f)</span><a id="link305" class="link" href="javascript:void(0)" onclick="callCitationLink('link305','ARP-ALL','P213(f)','','','')">Special AGI Threshold Rules for the Medical Expense Deduction of Senior Citizens in 2013, 2014, 2015, And 2016</a></span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <a name="9dd228ea7c551000ac76d8d385ad16940b" id="9dd228ea7c551000ac76d8d385ad16940b"></a>
+                <h2 origin-xpath="dl$9dd228ea7c551000ac76d8d385ad16940bh" class="hP docDisplay level-heading" style="">Medical Care Expenses</h2>
+                <a name="9dd228ea7c551000afa8d8d385ad16940c" id="9dd228ea7c551000afa8d8d385ad16940c"></a>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr style="padding-bottom:10px">
+                        <td valign="top" style="padding-right:8px;white-space:nowrap;">
+                            <p class="hP"></p>
+                        </td>
+                        <td valign="top">
+                            <p origin-xpath="dl$9dd228ea7c551000ac76d8d385ad16940bl$9dd228ea7c551000afa8d8d385ad16940cdoc-level-bodyp" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(d)</span><a id="link310" class="link" href="javascript:void(0)" onclick="callCitationLink('link310','ARP-ALL','P213(d)','','','')">Special Rules and Definitions for the Medical Expense Deduction</a></span>
+                            </p>
+                            <p origin-xpath="dl$9dd228ea7c551000ac76d8d385ad16940bl$9dd228ea7c551000afa8d8d385ad16940cdoc-level-bodyp2" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(b)</span><a id="link312" class="link" href="javascript:void(0)" onclick="callCitationLink('link312','ARP-ALL','P213(b)','','','')">Are Medicine and Drugs Considered Deductible Medical Expenses?</a></span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <a name="9dd228ea7c551000ad32d8d385ad16940d" id="9dd228ea7c551000ad32d8d385ad16940d"></a>
+                <h2 origin-xpath="dl$9dd228ea7c551000ad32d8d385ad16940dh" class="hP docDisplay level-heading" style="">Special Rules</h2>
+                <a name="9dd228ea7c551000b406d8d385ad16940e" id="9dd228ea7c551000b406d8d385ad16940e"></a>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr style="padding-bottom:10px">
+                        <td valign="top" style="padding-right:8px;white-space:nowrap;">
+                            <p class="hP"></p>
+                        </td>
+                        <td valign="top">
+                            <p origin-xpath="dl$9dd228ea7c551000ad32d8d385ad16940dl$9dd228ea7c551000b406d8d385ad16940edoc-level-bodyp" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(c)</span><a id="link317" class="link" href="javascript:void(0)" onclick="callCitationLink('link317','ARP-ALL','P213(c)','','','')">How are Medical Expenses Treated for a Decedent?</a></span>
+                            </p>
+                            <p origin-xpath="dl$9dd228ea7c551000ad32d8d385ad16940dl$9dd228ea7c551000b406d8d385ad16940edoc-level-bodyp2" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(d)</span><a id="link319" class="link" href="javascript:void(0)" onclick="callCitationLink('link319','ARP-ALL','P213(d)','','','')">Special Rules and Definitions for the Medical Expense Deduction</a></span>
+                            </p>
+                            <p origin-xpath="dl$9dd228ea7c551000ad32d8d385ad16940dl$9dd228ea7c551000b406d8d385ad16940edoc-level-bodyp3" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(e)</span><a id="link321" class="link" href="javascript:void(0)" onclick="callCitationLink('link321','ARP-ALL','P213(e)','','','')">How are Medical Expenses Treated for Dependents?</a></span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+                <div>
+                    <div style="padding-top:10px;"><a id="document_backToTop" href="javascript:void(0)" onclick="window.scrollTo(0,0);">Back to Top</a></div>
+                    <div style="width:100%;"><span style="float:right; padding-right:25px;"><a id="showLink" href="javascript:toggleMetadata();" class="metadataLink"><span id="show" class="ui">Show Metadata</span><span id="hide" class="ui" style="display:none">Hide Metadata</span></a>
+                        </span>
+                    </div>
+                    <div id="metadata" style="display:none;">
+                        <h1 class="metadata">METADATA</h1>
+                        <table class="metadata">
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_title">title</td>
+                                <td class="metadatavalue" id="metadata_title_value">§213, Medical Expense Deduction</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_search-title">search-title</td>
+                                <td class="metadatavalue" id="metadata_search-title_value"><b>Explanation</b>: Code Explanations, §213, Medical Expense Deduction</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_primary-class">primary-class</td>
+                                <td class="metadatavalue" id="metadata_primary-class_value">explanation/explanation</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_industry">Industry</td>
+                                <td class="metadatavalue" id="metadata_industry_value"></td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_wk-da_number">wk-da number</td>
+                                <td class="metadatavalue" id="metadata_wk-da_number_value">WKUS_TAL_11713</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_CCH_PubVol">CCH PubVol</td>
+                                <td class="metadatavalue" id="metadata_CCH_PubVol_value">arp10</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_wk-doc-id">wk-doc-id</td>
+                                <td class="metadatavalue" id="metadata_wk-doc-id_value">arp109dd228ea7c551000bf9fd8d385ad169402</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_language">language</td>
+                                <td class="metadatavalue" id="metadata_language_value">http://psi.oasis-open.org/iso/639/#eng</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_region">region</td>
+                                <td class="metadatavalue" id="metadata_region_value"><span>United States [http://wk-us.com/meta/regions/#US]</span></td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_publisher">publisher</td>
+                                <td class="metadatavalue" id="metadata_publisher_value">http://wk-us.com/meta/publishers/#CCH</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_normalized_link">Normalized Link Values</td>
+                                <td class="metadatavalue" id="metadata_normalized_link_value">P213</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_publishing-status">publishing-status</td>
+                                <td class="metadatavalue" id="metadata_publishing-status_value">new</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_publishing-dates">publishing-dates</td>
+                                <td class="metadatavalue" id="metadata_publishing-dates_value">available-date: <br>modified-date: <br>revised-date: <br></td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_document-transformation-history">document-transformation-history</td>
+                                <td class="metadatavalue" id="metadata_document-transformation-history_value">SOURCE-CRC: 1282258602<br>G2I-VERSION: Group2Interchange-RELEASE-05-07-0009<br>G2I-TRANSFORMATION-DATE: 2016-01-20<br>I2A-VERSION: JI2A-R7-00-01-08-0006<br>I2A-TRANSFORMATION-DATE: 2016-01-21<br></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p>
+                        <script language="javascript" type="text/javascript">
+                            if (setCloseButtonInNewWindow && setCloseButtonInNewWindow()) {
+                                document.write('<a id="closeWindow" href="javascript:void(0)" onClick="top.close()">Close window</a>');
+                            }
+                        </script>
+                    </p>
+                </div>
+                <div class="footer" id="docCopyrightInfo">
+                    <script language="javascript" type="text/javascript">
+                        setCopyrightInfo();
+                    </script>
+                </div>
+                <div id="printDocumentFragmentBtn" style="display: none; position: absolute;" onClick="printDocumentFragment()"><img src="../resources/images/printDocumentFragmentIcon.gif" alt="Print selected text"></div>
+                </div>
+                </div>
+                </td>
+                </tr>
+                </table>
+            </div>
+        </div>
+        <div class="accmenu" style="display: none;">
+            <div class="option addnote" style="display: none">
+                <div class="labelwrapper"><span class="label"></span></div>
+                <div class="replaceByColorPicker"></div>
+            </div>
+            <div class="option addhl" style="display: none">
+                <div class="labelwrapper"><span class="label"></span></div>
+                <div class="replaceByColorPicker"></div>
+            </div>
+            <div class="option printfragment">
+                <div class="img"></div>
+                <div class="labelwrapper"><span class="label"></span></div>
+            </div>
+        </div>
+        <div id="colorPickerTemplate" class="pe_colorpicker">
+            <div class="left">
+                <div class="right">
+                    <div class="middle"><a class="pe_colorboxwrapper selected"><span></span></a>
+                        <a class="pe_opener opened"></a><span class="pe_coloroptions"><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="metricsTemplate" class="metrics" style="display: none"><span class="dateCreated"></span><br><span class="author"></span>
+            <p class="modified"><span class="lastModified"></span><span class="dateModified"></span></p>
+        </div>
+        <div id="sideBoxTemplate" class="sideBox" style="display: none">
+            <div class="readMode">
+                <div class="replaceByColorPicker"></div>
+                <a class="deleteBtn"></a>
+                <a class="editBtn"></a>
+                <div class="replaceByMetrics"></div>
+                <div class="warningText" style="display: none"><span class="text"></span></div>
+                <div class="noteText"></div>
+            </div>
+            <div class="editMode">
+                <div class="editBox">
+                    <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+                <div class="footerStrip">
+                    <a class="cancelBtn"></a>
+                    <a class="saveBtn"></a>
+                </div>
+            </div>
+        </div>
+        <div id="topBoxTemplate" class="topBox" style="display: none">
+            <div class="readMode">
+                <a class="deleteBtn"></a>
+                <a class="editBtn"></a>
+                <div class="replaceByMetrics"></div>
+                <div class="warningText" style="display: none"><span class="text"></span>
+                    <a class="action"></a>
+                </div>
+                <div class="noteText"></div>
+            </div>
+            <div class="editMode">
+                <div class="editBox">
+                    <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+                <div class="footerStrip">
+                    <a class="cancelBtn"></a>
+                    <a class="saveBtn"></a>
+                </div>
+            </div>
+        </div>
+        <div id="overlayTemplate" class="overlay" style="display: none">
+            <div class="overlay-inner">
+                <div class="editMode">
+                    <div class="editBox">
+                        <a class="closeBtn"></a>
+                        <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+                    <div class="footerStrip">
+                        <a class="cancelBtn"></a>
+                        <a class="saveBtn"></a>
+                        <a class="deleteBtn"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html></textarea>
+    </div>
+    <div class="textInput spacer">
+      <h2>New Text</h2>
+      <textarea id="newText"><!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns:i18n="http://apache.org/cocoon/i18n/2.1" xmlns:configuration-reader="java:com.wolterskluwer.atlas.mantle.dps.cocoon.extension.ConfigurationReader">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/docDisplay.css?v=7">
+    <link rel="stylesheet" type="text/css" href="../resources/styles/annotation.css?v=13">
+    <script src="../resources/js/format-document-fragment.js?v=2" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        var documentContext = {
+            enableNotesRendering: true,
+            enableHLRendering: true,
+            rfID: "-1",
+            showAnnotationsByDefault: false,
+            annotationDisplayMode: "SIDE_NOTES",
+            annotationAccelerator: false,
+            filterByProductId: true,
+            locale: "en",
+            annoId: "-1",
+            scroll: "false",
+            showSelected: "false"
+        };
+    </script>
+    <script src="../resources/js/logging.js?v=3" type="text/javascript"></script>
+    <script src="../resources/js/jquery.1.7.2.min.js?v=1" type="text/javascript"></script>
+    <script src="../resources/js/rangy-core.js?v=3" type="text/javascript"></script>
+    <script src="../resources/js/core.js?v=20" type="text/javascript"></script>
+    <script src="../resources/js/accelerator.js?v=8" type="text/javascript"></script>
+    <script src="../resources/js/print-fragment.js?v=4" type="text/javascript"></script>
+    <script src="../resources/js/annotation.js?v=41" type="text/javascript"></script>
+    <script src="../resources/js/annotation-widgets.js?v=18" type="text/javascript"></script>
+    <script src="../resources/js/annotation-iface.js?v=11" type="text/javascript"></script>
+    <script src="../resources/js/common.js?v=9" type="text/javascript"></script>
+    <script src="../resources/js/scion.js?v=15" type="text/javascript"></script>
+    <script language="javascript" type="text/javascript">
+        wk.i18n.setText("pf_option_label", "Print selected text");
+        wk.i18n.setText("pf_option_title", "Print selected text");
+
+        wk.i18n.setText("color_title_TRANSPARENT", "Transparent");
+        wk.i18n.setText("color_title_YELLOW", "Yellow");
+        wk.i18n.setText("color_title_PINK", "Pink");
+        wk.i18n.setText("color_title_ORANGE", "Orange");
+        wk.i18n.setText("color_title_GREEN", "Green");
+        wk.i18n.setText("color_title_BLUE", "Blue");
+        wk.i18n.setText("add_note_option_label", "Add Note");
+        wk.i18n.setText("add_note_option_title", "Add Note for highlight");
+        wk.i18n.setText("hl_option_label", "Highlight text");
+        wk.i18n.setText("hl_option_title", "Highlight selected text");
+        wk.i18n.setText("note_handle_prompt", "Enter note here...");
+        wk.i18n.setText("note_handle_created", "Created");
+        wk.i18n.setText("note_handle_updated", "Last Modified:");
+        wk.i18n.setText("note_handle_add_note_btn_text", "Add Note");
+        wk.i18n.setText("note_handle_add_note_btn_title", "Adds note to this highlight");
+        wk.i18n.setText("note_handle_edit_btn_text", "Edit");
+        wk.i18n.setText("note_handle_edit_btn_title", "Edit");
+        wk.i18n.setText("note_handle_delete_btn_text", "Delete");
+        wk.i18n.setText("note_handle_delete_btn_title", "Delete");
+        wk.i18n.setText("note_handle_close_btn_text", "X");
+        wk.i18n.setText("note_handle_close_btn_title", "Close");
+        wk.i18n.setText("note_handle_save_btn_text", "Save");
+        wk.i18n.setText("note_handle_save_btn_title", "Save");
+        wk.i18n.setText("note_handle_cancel_btn_text", "Cancel");
+        wk.i18n.setText("note_handle_cancel_btn_title", "Cancel");
+        wk.i18n.setText("note_handle_view_in_host_msg", "View your previously highlighted passage on the Document Notes tab");
+        wk.i18n.setText("note_handle_no_user_name", "No user name");
+        wk.i18n.setText("note_author_disabled_suffix", "(disabled)");
+        wk.i18n.setText("note_author_deleted", "unknown user (deleted)");
+    </script>
+    <script src="../resources/js/cautionNoteTip.js?v=1" type="text/javascript"></script>
+    <script src="../resources/js/tooltip.js" type="text/javascript"></script>
+</head>
+
+<body bgcolor="#FFFFFF" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" onload="doOnDocumentLoaded()">
+    <div class="touchable">
+        <div id="dps-resource" class="dps-resource">
+            <div id="arp109dd228ea7c551000bf9fd8d385ad169402" tocleafnodewkdocid="WKUS_TAL_11713#teid-773" cshleafnodewkdocid="WKUS-TAL-DOCS-PHC-{c1a56e6a-6770-41f0-baa7-744fab3444e1}" class="docInFocus">
+                <table xmlns:cinclude="http://apache.org/cocoon/include/1.0" xmlns:xsp="http://apache.org/xsp" xmlns:xsp-request="http://apache.org/xsp/request/2.0" xmlns:dps="tbd/dps" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:i18n="http://apache.org/cocoon/i18n/2.1"
+                    cellpadding="0" cellspacing="0" class="anBase annoRight editorView">
+                    <tr>
+                        <td colspan="3">
+                            <div class="topContainer">
+                                <div class="topContainer-inner"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="anCol1" rowspan="2"></td>
+                        <td></td>
+                        <td class="anCol3" rowspan="2">
+                            <div class="sideContainer">
+                                <div class="sideContainer-inner"></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="anCol2">
+                            <div class="docContent">
+                                <div class="content-wrap super-class-explanation">
+                                    <div id="documentContent" origin-xpath="d" wk-doc-id="arp109dd228ea7c551000bf9fd8d385ad169402">
+                                        <div style="padding-bottom:5px;">
+                                            <a href="javascript:void(0)" id="RFIndicator_arp109dd228ea7c551000bf9fd8d385ad169402" onclick="openResearchFolder('arp109dd228ea7c551000bf9fd8d385ad169402')" alt="Open Research Folder" title="Open Research Folder"
+                                                class=""></a>
+                                        </div>
+                                        <h1 class="docDisplay" id="docTitle" origin-xpath="dh">Code Explanations<span class="docHeadSpacer">,</span>§213, Medical Expense Deduction</h1>
+                                        <p xmlns:dps="tbd/dps">
+                                            <p>
+                                                <div origin-xpath="dri" origin-id="ri1" id="ri1" class="relBtnContainer">
+                                                    <div class="relBtn firstRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_internal_revenue_code_button" title="IRC" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','internal_revenue_code_button','IRC')"><a id="relationships1_internal_revenue_code_button_link" href="javascript:void(0)" class="relBtnLink atomHL">IRC</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_committee_report_button" title="Committee Reports" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','committee_report_button','Committee Reports')"><a id="relationships1_committee_report_button_link" href="javascript:void(0)" class="relBtnLink atomHL">Committee Reports</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_regulations_button" title="Regulations" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','regulations_button','Regulations')"><a id="relationships1_regulations_button_link" href="javascript:void(0)" class="relBtnLink atomHL">Regulations</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_explanations_button" title="CCH Explanations" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','explanations_button','CCH Explanations')"><a id="relationships1_explanations_button_link" href="javascript:void(0)" class="relBtnLink atomHL">CCH Explanations</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_annotations_button" title="Annotations" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','annotations_button','Annotations')"><a id="relationships1_annotations_button_link" href="javascript:void(0)" class="relBtnLink atomHL">Annotations</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_forms_button" title="Forms" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','forms_button','Forms')"><a id="relationships1_forms_button_link" href="javascript:void(0)" class="relBtnLink atomHL">Forms</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_related_form_button" title="Form" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','related_form_button','Form')"><a id="relationships1_related_form_button_link" href="javascript:void(0)" class="relBtnLink atomHL">Form</a></div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="relBtn regularRelBtn">
+                                                        <div>
+                                                            <div id="relationships1_related_tool" title="Tools" onclick="callRelatedLink(this,'arp109dd228ea7c551000bf9fd8d385ad169402','related_tool','Tools')"><a id="relationships1_related_tool_link" href="javascript:void(0)" class="relBtnLink atomHL">Tools</a></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </p>
+                                        </p>
+                                        <a name="9dd228ea7c5510008611d8d385ad169404" id="9dd228ea7c5510008611d8d385ad169404"></a>
+                                        <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyp" class="hP">Individuals can deduct the amount of unreimbursed <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §213(a)</span><a id="link6" class="link" href="javascript:void(0)" onclick="callCitationLink('link6','IRC-FILE','S213(a)','','','')">medical expenses</a></span>
+                                            that exceeds a threshold percentage of their adjusted gross income (AGI). In order to qualify for the deduction, the expenses must be paid for medical care, which includes payments for medical or dental services,
+                                            prescribed medicine and drugs, insulin, medical equipment and supplies, medical insurance premiums, transportation needed to get medical care, and many other medical-related expenses.</p>
+                                        <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyp2"
+                                            class="hP">The medical expense deduction is an itemized deduction and is reported on Schedule A (Form 1040), Itemized Deductions. Neither Form 1040A nor Form 1040EZ can be used to claim a medical expense deduction. </p>
+                                        <p
+                                            origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyp3" class="hP"><i>Deduction requirements.</i> Individuals can claim a <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §213(a)</span><a id="link10" class="link" href="javascript:void(0)" onclick="callCitationLink('link10','IRC-FILE','S213(a)','','','')">deduction for medical expenses</a></span>:</p>
+                                            <table
+                                                border="0" cellspacing="0" cellpadding="0" width="100%" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo">
+                                                <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyoi">
+                                                    <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(1)</span></td>
+                                                    <td style="padding-left:6pt">
+                                                        <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyoip">That are paid during the tax year and are not compensated for by insurance or otherwise;</p>
+                                                    </td>
+                                                </tr>
+                                                <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyoi2">
+                                                    <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(2)</span></td>
+                                                    <td style="padding-left:6pt">
+                                                        <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyoi2p">That are for the medical care of the individual, the individual’s spouse, or the individual’s qualifying dependent; and</p>
+                                                    </td>
+                                                </tr>
+                                                <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyoi3">
+                                                    <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(3)</span></td>
+                                                    <td style="padding-left:6pt">
+                                                        <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyoi3p">To the extent that the expenses exceed 10 percent of adjusted gross income (AGI).</p>
+                                                    </td>
+                                                </tr>
+                </table>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyp4" class="hP">Senior citizens can claim a medical expense deduction to the extent that their qualifying expenses exceed 7.5 percent of AGI. The 7.5-percent AGI threshold for senior citizens is temporary and only applies for tax years ending before 2017.
+                    For tax years beginning in 2011 and 2012, the percentage of AGI threshold was 7.5 percent for all individuals, no matter what their age. </p>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyp5" class="hP">There are a few exceptions to the rule that medical expenses are deductible in the year paid.</p>
+                <table border="0" cellspacing="0" cellpadding="0" width="100%" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo2">
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo2i">
+                        <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(1)</span></td>
+                        <td style="padding-left:6pt">
+                            <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo2ip">An individual may deduct qualified premiums paid for future medical care to be provided after the individual reaches the age of 65. </p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo2i2">
+                        <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(2)</span></td>
+                        <td style="padding-left:6pt">
+                            <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo2i2p">Certain prepayments for lifetime institutional care are deductible.</p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo2i3">
+                        <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(3)</span></td>
+                        <td style="padding-left:6pt">
+                            <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyo2i3p">The medical expenses of a decedent paid by the decedent's estate within one year of the decedent's death can be treated as paid by the decedent in the year the expenses were incurred.</p>
+                        </td>
+                    </tr>
+                </table>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyp6" class="hP"><i>Recordkeeping.</i> Individuals need to keep <a xmlns:dps="tbd/dps" class="link" alt="Form" onclick="handleAppLink('[{cc|BaseUrl.TAATools|http://tax.cchgroup.com}]/WKRedirect/WKRedirect.aspx?prod=PPIII&amp;DI=[{cc|session.auth.ticket}]&amp;U=[{cc|session.user.id}]&amp;NormVal=NON:%20WKFORM%20|P|P0005196%20ARP10&amp;endPtLinkHere=1&amp;class=PracticeTool&amp;caption=Form','Form','arp109dd228ea7c551000bf9fd8d385ad169402')"
+                        href="javascript:void(0)">records</a> of their medical and dental expenses, but they do not need to submit them with their return in order to claim the medical expense deduction. Individuals claiming medical expense deductions should
+                    be prepared to provide the name and address of each person who received payment for medical expenses and the amount and date of payment.</p>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyp7" class="hP">Medical expense deductions must be substantiated by <span class="link-wrapper"><span class="cite-ref-doc-cite">Treas. Reg. §1.213-1(h)</span><a id="link31" class="link" href="javascript:void(0)" onclick="callCitationLink('link31','FEDREG','S1.213-1(h)','','','')">statements or itemized invoices</a></span>
+                    from the doctor, hospital, pharmacy or other person or entity who was paid for the medical service. The statement or invoice should show: </p>
+                <ul origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyu" class="bull">
+                    <li class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyui">
+                        <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyuip">the nature of the service provided and the person who received the service ;</p>
+                    </li>
+                    <li class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyui2">
+                        <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyui2p">the nature of any other item of expense and for whom the expense was incurred, for what specific purpose the expense was incurred, the amount that was paid, and the date of payment; and </p>
+                    </li>
+                    <li class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyui3">
+                        <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyui3p">any other relevant information.</p>
+                    </li>
+                </ul>
+                <a name="9dd228ea7c551000a7f6d8d385ad169405" id="9dd228ea7c551000a7f6d8d385ad169405"></a>
+                <h2 origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405h" class="hP docDisplay level-heading" style="">Common Examples of Deductible and Nondeductible Medical Expenses</h2>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405p" class="hP">In order to be eligible for the medical expense deduction, the individual’s expenses must be paid for medical care, which includes payments for medical or dental services, prescribed medicine and drugs, insulin, medical equipment and supplies,
+                    medical insurance premiums, transportation needed to get medical care, and many other medical-related expenses. Although capital expenditures are generally not deductible, if the purpose of a capital expenditure is for the medical
+                    care of an individual or the individual’s spouse or dependents, it can be deductible. </p>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405p2" class="hP">The key issue for the medical expense deduction is what expenses are considered to be paid for medical care. <span class="quote">"<span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §213(d)(1)</span><a id="link44" class="link"
+                        href="javascript:void(0)" onclick="callCitationLink('link44','IRC-FILE','S213(d)(1)','','','')">Medical care</a></span>"</span> is defined as amounts paid for the diagnosis, cure, mitigation, treatment, or prevention of disease, or
+                    for the purpose of affecting any structure or function of the body. Medical care also includes amounts paid for transportation to get medical care, premiums paid for insurance that covers the cost of medical care, amounts paid for
+                    long-term care services, and limited amounts of premiums paid for a qualified long-term care insurance contract. In addition, a limited amount of <span class="link-wrapper"><span class="cite-ref-doc-cite">I.R.C. §213(d)(2)</span>
+                    <a
+                        id="link45" class="link" href="javascript:void(0)" onclick="callCitationLink('link45','IRC-FILE','S213(d)(2)','','','')">lodging costs</a>
+                        </span> that are necessary for medical care may qualify as medical care expenses.</p>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405p3" class="hP">The following chart provides some common examples of deductible and nondeductible medical expenses. For a detailed description and checklist of deductible and nondeductible medical expenses, see <span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(d)-child1</span>
+                    <a
+                        id="link47" class="link" href="javascript:void(0)" onclick="callCitationLink('link47','ARP-ALL','P213(d)-child1','','','')">Explanation: §213(d)</a>
+                        </span>. </p>
+                <table class="xhtml" cellspacing="8" cellpadding="0" border="0" id="9dd228ea7c551000ba80d8d385ad169406" width="750">
+                    <colgroup>
+                        <col span="1" width="48%">
+                        <col span="1" width="2%">
+                        <col span="1" width="48%">
+                        <col span="1" width="2%">
+                    </colgroup>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr">
+                        <th class="xhtml" align="center" colspan="1" rowspan="1" valign="bottom">
+                            <p class="hP">Examples of Deductible Medical Expenses—Amounts Paid for:</p>
+                        </th>
+                        <td valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <th class="xhtml" align="center" colspan="2" rowspan="1" valign="bottom">
+                            <p class="hP">Examples of Nondeductible Medical Expenses—Amounts Paid for:</p>
+                        </th>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr2">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Acupuncture</p>
+                        </td>
+                        <td valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Babysitting and child care services</p>
+                        </td>
+                        <td valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr3">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Ambulance service</p>
+                        </td>
+                        <td valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Cosmetic surgery (unnecessary)</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr4">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Bandages and medical supplies</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Funeral expenses</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr5">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Birth control pills</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Health club dues</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr6">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Breast pumps and lactation supplies</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Health savings accounts</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr7">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Chiropractor services</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Household help</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr8">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Dental treatment</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Illegal operations and treatments</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr9">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Eye exams, eyeglasses and contact lenses</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Maternity clothes</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr10">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Hearing aids</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Medical savings accounts</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr11">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Home improvements if the main purpose is medical care (restrictions apply)
+                            </p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Prescribed drugs from another country (unless imported legally)</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr12">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Lab fees</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Medicines and drugs, nonprescribed (over-the-counter)</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr13">
+                        <td align="left" valign="top">
+                            <p class="hP" style="margin-bottom:0px;">Medical insurance premiums (restrictions apply)</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="top">
+                            <p class="hP" style="margin-bottom:0px;">Nutritional supplements for general health, such as vitamins and herbal supplements</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr14">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Medicines and drugs, prescribed</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Toothbrush and toothpaste</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr15">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Physical exams</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Teeth whitening</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr16">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Psychiatric care</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Weight-loss program (for general weight loss)</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr17">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Stop-smoking program</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr18">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Surgery (unnecessary cosmetic surgery not deductible)</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr19">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Transportation for medical care</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr20">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Vasectomy</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr21">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Weight-loss program (for treatment of specific disease diagnosed by doctor)</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr22">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">Wheelchairs</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr23">
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;">X-rays</p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                        <td align="left" valign="bottom">
+                            <p class="hP" style="margin-bottom:0px;"></p>
+                        </td>
+                    </tr>
+                    <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c551000a7f6d8d385ad169405tr24">
+                        <td>
+                            <p class="hP" style="margin-bottom:0px;"><br></p>
+                        </td>
+                    </tr>
+                </table>
+                <a name="9dd228ea7c55100088c0d8d385ad169407" id="9dd228ea7c55100088c0d8d385ad169407"></a>
+                <h2 origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407h" class="hP docDisplay level-heading" style="">Reporting Medical Expense Deduction on Schedule A (Form 1040),
+Itemized Deductions</h2>
+                <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407p" class="hP">The medical expense deduction is reported on Lines 1 through 4 of Schedule A (Form 1040), Itemized Deductions (2014). Medical expenses after reductions for reimbursements are reported on Line 1. The taxpayer's AGI is reported on Line 2.
+                    The AGI limitation is computed on Line 3 by multiplying the taxpayer's AGI from Line 2 by 10 percent (or 7.5 percent for those born before January 2, 1950, e.g., 65 or over in 2014). The taxpayer's medical expense deduction for the
+                    tax year is the amount computed on Line 4, which is equal to the medical expenses from Line 1 less the AGI limitation from Line 3.</p>
+                <div origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407n"
+                    class="hP noteContainer">
+                    <div class="example">Example&nbsp;</div>
+                    <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407np" class="hP noteBody">Peter and Ellen, who are both under 65 years old in 2014, file as married jointly. For the year, they have an adjusted gross income of $60,000. Their reportable medical expenses for the year (as detailed below) are $9,300. Their unusually
+                        high medical expenses for the year were in part attributable to a back injury that Peter, an aspiring tennis pro, suffered while playing in a tennis match. Their qualifying medical expenses are follows:</p>
+                    <table border="0" cellspacing="0"
+                        cellpadding="0" width="100%" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407no">
+                        <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(1)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noip">$4,240 in doctor bills and $200 in prescribed medicine and drugs for Ellen's mother, who is a dependent;</p>
+                            </td>
+                        </tr>
+                        <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi2">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(2)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi2p">$400 in prescribed medicine and drugs for Peter's back injury;</p>
+                            </td>
+                        </tr>
+                        <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi3">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(3)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi3p">$900 was paid for the combined family medical and dental insurance; </p>
+                            </td>
+                        </tr>
+                        <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi4">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(4)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi4p">$3,400, representing Peter's total hospital and doctor bills for his injury of $5,900, less $2,500 that was reimbursed by his insurance company;</p>
+                            </td>
+                        </tr>
+                        <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi5">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(5)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi5p">the $45 expense of transporting Peter to and from the hospital and the doctor's office; and</p>
+                            </td>
+                        </tr>
+                        <tr origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi6">
+                            <td width="30" align="right" valign="top" class=" "><span class="docHeadSpacer">(6)</span></td>
+                            <td style="padding-left:6pt">
+                                <p class="hP" origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407noi6p">the $115 cost of new eyeglasses for Ellen.</p>
+                            </td>
+                        </tr>
+                    </table>
+                    <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407np2" class="hP noteBody">Peter and Ellen report $9,300 in medical expenses in 2014 ($4,240 + $200 + $400 + $900 + $3,400 + $45 + $115). This amount is amount is reduced by $6,000 (10 percent of their adjusted gross income of $60,000), resulting in $3,300 in
+                        medical deductions to be reported as itemized deductions. In addition, Peter and Ellen paid $5,600 in real estate taxes, $7,200 in mortgage interest expense, and made $1,700 in charitable donations, for total itemized deductions
+                        of $17,800. This amount is transferred to Line 40 of Form 1040.</p>
+                    <p origin-xpath="dl$9dd228ea7c5510008611d8d385ad169404doc-level-bodyl$9dd228ea7c55100088c0d8d385ad169407np3" class="hP noteBody"><span style="margin-left:15px"><a target="_blank" href="atlas-doc-attach/attachment.pdf?src=file:///apps/WEBS/docs/attach/WKUS-TAL-DOCS-PHC/TPP_1040_2014_35095.05_A.pdf&amp;documentTitle=TPP_1040_2014_35095.pdf&amp;AtlasTicket=CC51D9C6-B39D-49D8-B968-AD7263E82B95" onclick="logExternalLink('TPP_1040_2014_35095.05_A.pdf','/docmedia/attach/WKUS-TAL-DOCS-PHC/TPP_1040_2014_35095.05_A.pdf')" alt="Click to Launch Filled-in Form: Schedule A (Form 1040)" title="Click to Launch Filled-in Form: Schedule A (Form 1040)">Click to Launch Filled-in Form: Schedule A (Form 1040)</a></span></p>
+                </div>
+                <a name="9dd228ea7c551000ac8cd8d385ad169409" id="9dd228ea7c551000ac8cd8d385ad169409"></a>
+                <h2 origin-xpath="dl$9dd228ea7c551000ac8cd8d385ad169409h" class="hP docDisplay level-heading" style="">Medical Expense Deduction Requirements</h2>
+                <a name="9dd228ea7c551000b75ad8d385ad16940a" id="9dd228ea7c551000b75ad8d385ad16940a"></a>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr style="padding-bottom:10px">
+                        <td valign="top" style="padding-right:8px;white-space:nowrap;">
+                            <p class="hP"></p>
+                        </td>
+                        <td valign="top">
+                            <p origin-xpath="dl$9dd228ea7c551000ac8cd8d385ad169409l$9dd228ea7c551000b75ad8d385ad16940adoc-level-bodyp" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(a)</span><a id="link297" class="link" href="javascript:void(0)" onclick="callCitationLink('link297','ARP-ALL','P213(a)','','','')">What Medical Expenses Can a Taxpayer Deduct?</a></span>
+                            </p>
+                            <p origin-xpath="dl$9dd228ea7c551000ac8cd8d385ad169409l$9dd228ea7c551000b75ad8d385ad16940adoc-level-bodyp2" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(a)-child1</span><a id="link299" class="link" href="javascript:void(0)" onclick="callCitationLink('link299','ARP-ALL','P213(a)-child1','','','')">Payments and Reimbursements of Medical Expenses</a></span>
+                            </p>
+                            <p origin-xpath="dl$9dd228ea7c551000ac8cd8d385ad169409l$9dd228ea7c551000b75ad8d385ad16940adoc-level-bodyp3" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(a)-child2</span><a id="link301" class="link" href="javascript:void(0)" onclick="callCitationLink('link301','ARP-ALL','P213(a)-child2','','','')">Individuals Who Qualify for the Deduction</a></span>
+                            </p>
+                            <p origin-xpath="dl$9dd228ea7c551000ac8cd8d385ad169409l$9dd228ea7c551000b75ad8d385ad16940adoc-level-bodyp4" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(a)-child3</span><a id="link303" class="link" href="javascript:void(0)" onclick="callCitationLink('link303','ARP-ALL','P213(a)-child3','','','')">Applying AGI Threshold to Determine Deduction</a></span>
+                            </p>
+                            <p origin-xpath="dl$9dd228ea7c551000ac8cd8d385ad169409l$9dd228ea7c551000b75ad8d385ad16940adoc-level-bodyp5" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(f)</span><a id="link305" class="link" href="javascript:void(0)" onclick="callCitationLink('link305','ARP-ALL','P213(f)','','','')">Special AGI Threshold Rules for the Medical Expense Deduction of Senior Citizens in 2013, 2014, 2015, And 2016</a></span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <a name="9dd228ea7c551000ac76d8d385ad16940b" id="9dd228ea7c551000ac76d8d385ad16940b"></a>
+                <h2 origin-xpath="dl$9dd228ea7c551000ac76d8d385ad16940bh" class="hP docDisplay level-heading" style="">Medical Care Expenses</h2>
+                <a name="9dd228ea7c551000afa8d8d385ad16940c" id="9dd228ea7c551000afa8d8d385ad16940c"></a>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr style="padding-bottom:10px">
+                        <td valign="top" style="padding-right:8px;white-space:nowrap;">
+                            <p class="hP"></p>
+                        </td>
+                        <td valign="top">
+                            <p origin-xpath="dl$9dd228ea7c551000ac76d8d385ad16940bl$9dd228ea7c551000afa8d8d385ad16940cdoc-level-bodyp" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(d)</span><a id="link310" class="link" href="javascript:void(0)" onclick="callCitationLink('link310','ARP-ALL','P213(d)','','','')">Special Rules and Definitions for the Medical Expense Deduction</a></span>
+                            </p>
+                            <p origin-xpath="dl$9dd228ea7c551000ac76d8d385ad16940bl$9dd228ea7c551000afa8d8d385ad16940cdoc-level-bodyp2" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(b)</span><a id="link312" class="link" href="javascript:void(0)" onclick="callCitationLink('link312','ARP-ALL','P213(b)','','','')">Are Medicine and Drugs Considered Deductible Medical Expenses?</a></span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                <a name="9dd228ea7c551000ad32d8d385ad16940d" id="9dd228ea7c551000ad32d8d385ad16940d"></a>
+                <h2 origin-xpath="dl$9dd228ea7c551000ad32d8d385ad16940dh" class="hP docDisplay level-heading" style="">Special Rules</h2>
+                <a name="9dd228ea7c551000b406d8d385ad16940e" id="9dd228ea7c551000b406d8d385ad16940e"></a>
+                <table cellpadding="0" cellspacing="0" border="0">
+                    <tr style="padding-bottom:10px">
+                        <td valign="top" style="padding-right:8px;white-space:nowrap;">
+                            <p class="hP"></p>
+                        </td>
+                        <td valign="top">
+                            <p origin-xpath="dl$9dd228ea7c551000ad32d8d385ad16940dl$9dd228ea7c551000b406d8d385ad16940edoc-level-bodyp" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(c)</span><a id="link317" class="link" href="javascript:void(0)" onclick="callCitationLink('link317','ARP-ALL','P213(c)','','','')">How are Medical Expenses Treated for a Decedent?</a></span>
+                            </p>
+                            <p origin-xpath="dl$9dd228ea7c551000ad32d8d385ad16940dl$9dd228ea7c551000b406d8d385ad16940edoc-level-bodyp2" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(d)</span><a id="link319" class="link" href="javascript:void(0)" onclick="callCitationLink('link319','ARP-ALL','P213(d)','','','')">Special Rules and Definitions for the Medical Expense Deduction</a></span>
+                            </p>
+                            <p origin-xpath="dl$9dd228ea7c551000ad32d8d385ad16940dl$9dd228ea7c551000b406d8d385ad16940edoc-level-bodyp3" class="hP"><span class="link-wrapper"><span class="cite-ref-doc-cite">¶213(e)</span><a id="link321" class="link" href="javascript:void(0)" onclick="callCitationLink('link321','ARP-ALL','P213(e)','','','')">How are Medical Expenses Treated for Dependents?</a></span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+                </div>
+                <div>
+                    <div style="padding-top:10px;"><a id="document_backToTop" href="javascript:void(0)" onclick="window.scrollTo(0,0);">Back to Top</a></div>
+                    <div style="width:100%;"><span style="float:right; padding-right:25px;"><a id="showLink" href="javascript:toggleMetadata();" class="metadataLink"><span id="show" class="ui">Show Metadata</span><span id="hide" class="ui" style="display:none">Hide Metadata</span></a>
+                        </span>
+                    </div>
+                    <div id="metadata" style="display:none;">
+                        <h1 class="metadata">METADATA</h1>
+                        <table class="metadata">
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_title">title</td>
+                                <td class="metadatavalue" id="metadata_title_value">§213, Medical Expense Deduction</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_search-title">search-title</td>
+                                <td class="metadatavalue" id="metadata_search-title_value"><b>Explanation</b>: Code Explanations, §213, Medical Expense Deduction</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_primary-class">primary-class</td>
+                                <td class="metadatavalue" id="metadata_primary-class_value">explanation/explanation</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_industry">Industry</td>
+                                <td class="metadatavalue" id="metadata_industry_value"></td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_wk-da_number">wk-da number</td>
+                                <td class="metadatavalue" id="metadata_wk-da_number_value">WKUS_TAL_11713</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_CCH_PubVol">CCH PubVol</td>
+                                <td class="metadatavalue" id="metadata_CCH_PubVol_value">arp10</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_wk-doc-id">wk-doc-id</td>
+                                <td class="metadatavalue" id="metadata_wk-doc-id_value">arp109dd228ea7c551000bf9fd8d385ad169402</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_language">language</td>
+                                <td class="metadatavalue" id="metadata_language_value">http://psi.oasis-open.org/iso/639/#eng</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_region">region</td>
+                                <td class="metadatavalue" id="metadata_region_value"><span>United States [http://wk-us.com/meta/regions/#US]</span></td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_publisher">publisher</td>
+                                <td class="metadatavalue" id="metadata_publisher_value">http://wk-us.com/meta/publishers/#CCH</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_normalized_link">Normalized Link Values</td>
+                                <td class="metadatavalue" id="metadata_normalized_link_value">P213</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_publishing-status">publishing-status</td>
+                                <td class="metadatavalue" id="metadata_publishing-status_value">new</td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_publishing-dates">publishing-dates</td>
+                                <td class="metadatavalue" id="metadata_publishing-dates_value">available-date: <br>modified-date: <br>revised-date: <br></td>
+                            </tr>
+                            <tr class="metadata">
+                                <td class="metadatahead" valign="top" id="metadata_document-transformation-history">document-transformation-history</td>
+                                <td class="metadatavalue" id="metadata_document-transformation-history_value">SOURCE-CRC: 1282258602<br>G2I-VERSION: Group2Interchange-RELEASE-05-07-0009<br>G2I-TRANSFORMATION-DATE: 2016-01-20<br>I2A-VERSION: JI2A-R7-00-01-08-0006<br>I2A-TRANSFORMATION-DATE: 2016-01-21<br></td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p>
+                        <script language="javascript" type="text/javascript">
+                            if (setCloseButtonInNewWindow && setCloseButtonInNewWindow()) {
+                                document.write('<a id="closeWindow" href="javascript:void(0)" onClick="top.close()">Close window</a>');
+                            }
+                        </script>
+                    </p>
+                </div>
+                <div class="footer" id="docCopyrightInfo">
+                    <script language="javascript" type="text/javascript">
+                        setCopyrightInfo();
+                    </script>
+                </div>
+                <div id="printDocumentFragmentBtn" style="display: none; position: absolute;" onClick="printDocumentFragment()"><img src="../resources/images/printDocumentFragmentIcon.gif" alt="Print selected text"></div>
+                </div>
+                </div>
+                </td>
+                </tr>
+                </table>
+            </div>
+        </div>
+        <div class="accmenu" style="display: none;">
+            <div class="option addnote" style="display: none">
+                <div class="labelwrapper"><span class="label"></span></div>
+                <div class="replaceByColorPicker"></div>
+            </div>
+            <div class="option addhl" style="display: none">
+                <div class="labelwrapper"><span class="label"></span></div>
+                <div class="replaceByColorPicker"></div>
+            </div>
+            <div class="option printfragment">
+                <div class="img"></div>
+                <div class="labelwrapper"><span class="label"></span></div>
+            </div>
+        </div>
+        <div id="colorPickerTemplate" class="pe_colorpicker">
+            <div class="left">
+                <div class="right">
+                    <div class="middle"><a class="pe_colorboxwrapper selected"><span></span></a>
+                        <a class="pe_opener opened"></a><span class="pe_coloroptions"><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a><a class="pe_colorboxwrapper"><span></span></a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="metricsTemplate" class="metrics" style="display: none"><span class="dateCreated"></span><br><span class="author"></span>
+            <p class="modified"><span class="lastModified"></span><span class="dateModified"></span></p>
+        </div>
+        <div id="sideBoxTemplate" class="sideBox" style="display: none">
+            <div class="readMode">
+                <div class="replaceByColorPicker"></div>
+                <a class="deleteBtn"></a>
+                <a class="editBtn"></a>
+                <div class="replaceByMetrics"></div>
+                <div class="warningText" style="display: none"><span class="text"></span></div>
+                <div class="noteText"></div>
+            </div>
+            <div class="editMode">
+                <div class="editBox">
+                    <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+                <div class="footerStrip">
+                    <a class="cancelBtn"></a>
+                    <a class="saveBtn"></a>
+                </div>
+            </div>
+        </div>
+        <div id="topBoxTemplate" class="topBox" style="display: none">
+            <div class="readMode">
+                <a class="deleteBtn"></a>
+                <a class="editBtn"></a>
+                <div class="replaceByMetrics"></div>
+                <div class="warningText" style="display: none"><span class="text"></span>
+                    <a class="action"></a>
+                </div>
+                <div class="noteText"></div>
+            </div>
+            <div class="editMode">
+                <div class="editBox">
+                    <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+                <div class="footerStrip">
+                    <a class="cancelBtn"></a>
+                    <a class="saveBtn"></a>
+                </div>
+            </div>
+        </div>
+        <div id="overlayTemplate" class="overlay" style="display: none">
+            <div class="overlay-inner">
+                <div class="editMode">
+                    <div class="editBox">
+                        <a class="closeBtn"></a>
+                        <div class="author"></div><textarea class="noteInputBox"></textarea></div>
+                    <div class="footerStrip">
+                        <a class="cancelBtn"></a>
+                        <a class="saveBtn"></a>
+                        <a class="deleteBtn"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html></textarea>
+    </div>
+    <div class="panel">
+      <div class="fileName">File name: arp109dd228ea7c551000bf9fd8d385ad169402.html</div>
+      <nav class="navPanel"><a href="diff_arp109d8d635e7c551000b631d8d385ad1694032.html">&#10094;previous</a>
+      </nav>
+      <div class="backToList"><a href="../index.html">List of files</a></div>
+    </div>
+    <div class="viewType">
+      <div class="sidebyside">
+        <input type="radio" name="_viewtype" checked="checked" onclick="diffUsingJS(0);">
+        <label for="sidebyside">Side by Side Diff</label>
+      </div>
+      <div class="sidebyside">
+        <input id="inline" type="radio" name="_viewtype" onclick="diffUsingJS(1);">
+        <label for="inline">Inline Diff</label>
+      </div>
+    </div>
+    <div id="diffoutput"></div>
+  </body>
+  <script>diffUsingJS(0);</script>
+</html>

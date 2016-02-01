@@ -47,4 +47,16 @@ input[type='radio'] {
     width: 15px;
     height: 15px;
 }
+.panel {
+    font-size: 20px;
+    color: grey;
+}
+
+.navPanel, .backToList, .fileName {
+    padding: 10px 5px;
+}
+.navPanel a{
+    padding-right: 20px;
+    text-decoration: none;
+}
 

@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/Aksana-Tsishchanka/compareHTML#readme",
   "dependencies": {
+    "diff": "^2.2.1",
     "jade": "^1.11.0",
     "js-beautify": "^1.6.0"
   }

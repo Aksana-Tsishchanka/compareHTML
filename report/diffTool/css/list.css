@@ -5,8 +5,40 @@ body {
     width: 50%;
     margin-left: 20px;
     margin-right: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 1px solid #e4d8ff;
 }
 
 .listFiles div {
     padding-top: 10px;
+}
+
+
+.container h1 {
+    color: grey;
+}
+
+li {
+    list-style-type: none;
+    counter-increment: list;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+li:before {
+    content: counter(list) ". ";
+    color: grey;
+}
+
+.listFiles a {
+    text-decoration: none;
+    color: #262626;
+}
+
+.listFiles a:hover {
+    color:  #6a5acd;
+    font-weight: bold;
+}
+.listFiles h4 {
+    color:   #7b68ee;
 }

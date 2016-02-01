@@ -17,11 +17,24 @@ html
         .textInput
             h2 Base Text
             textarea#baseText
-              !{before}
+              |!{before}
         .textInput.spacer
             h2 New Text
             textarea#newText
-              !{after}
+              | !{after}
+        div.panel
+            div.fileName
+                |File name: #{namefile}
+             nav.navPanel
+                 if  (previousfile)
+                   a(href="diff_#{previousfile}")
+                     |&#10094;previous
+                 if  (nextfile)
+                    a(href="diff_#{nextfile}")
+                      |next&#x276F;
+            div.backToList
+              a(href="../index.html")
+                |List of files
         .viewType
             div.sidebyside
               input(type='radio', name='_viewtype', checked='checked',onclick='diffUsingJS(0);')
