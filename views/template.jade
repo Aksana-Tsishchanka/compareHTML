@@ -28,10 +28,10 @@ html
              nav.navPanel
                  if  (previousfile)
                    a(href="diff_#{previousfile}")
-                     |&#10094;previous
+                     |&#10094; previous
                  if  (nextfile)
                     a(href="diff_#{nextfile}")
-                      |next&#x276F;
+                      |next &#x276F;
             div.backToList
               a(href="../index.html")
                 |List of files
@@ -43,5 +43,13 @@ html
               input#inline(type='radio', name='_viewtype', onclick='diffUsingJS(1);')
               label(for='inline') Inline Diff
         #diffoutput
+        div.panel
+          nav.navPanel
+            if  (previousfile)
+              a(href="diff_#{previousfile}")
+                | &#10094; previous
+            if (nextfile)
+              a(href="diff_#{nextfile}")
+                | next &#x276F;
     script.
         diffUsingJS(0);
